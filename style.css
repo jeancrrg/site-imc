@@ -36,7 +36,7 @@ header img {
     padding-left: 80px;
 }
 
-.titulo {
+#titulo {
     /* Permite que a div cresça e ocupe o espaço restante */
     flex-grow: 1;
 }
@@ -58,11 +58,11 @@ header p {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.548);
 }
 
-header > button {
+.botao {
     color: white;
     background-color: var(--corVermelho);
-    padding: 10px 20px;
-    margin: 10px;
+    padding: 5px 15px;
+    margin: 15px;
     border-radius: 10px;
     /* Muda o ponteiro do mouse ao passar encima */
     cursor: pointer;
@@ -92,8 +92,7 @@ nav > a:hover {
 main {
     background-color: white;
     min-width: 300px;
-    max-width: 1000px;
-    padding: 20px;
+    max-width: 1200px;
     margin: auto;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.483);
 }
@@ -101,19 +100,63 @@ main {
 main h2 {
     color: var(--corAzulEscuro);
     font-size: 1.5em;
-}
-
-main img {
-    margin-left: 25px;
+    font-weight: bold;
+    text-indent: 30px;
+    padding: 30px;
+    margin: 0px;
 }
 
 main p {
     font-size: 1em;
     text-indent: 30px;
     text-align: justify;
-    margin: 15px 0px;
     /* Espaçamento entre linhas */
     line-height: 2em;
+    padding: 0px 30px;
+    margin: 0px;
+}
+
+main img {
+    padding: 30px;
+    margin-left: 25px;
+}
+
+#importanciaIMC {
+    color: white;
+    background-image: linear-gradient(to bottom, var(--corAzulEscuro), var(--corAzulClaro));
+    min-width: 300px;
+    max-width: 1200px;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#importanciaIMC h2 {
+    color: white;
+    font-weight: bold;
+    margin: 10px;
+    text-indent: 20px;
+}
+
+#textoImportanciaIMC {
+    width: 400px;
+}
+
+#calculadoraIMC {
+    background-color: white;
+    border-radius: 16px;
+    max-width: 432px;
+    height: 300px;
+}
+
+#resultadoIMC {
+    color: white;
+    background-color: var(--corCinza);
+}
+
+#resultadoIMC h2 {
+    color: var(--corAzulClaro);
 }
 
 footer {
@@ -125,12 +168,11 @@ footer {
     align-items: center;
     /* Distribui os elementos horizontalmente */
     justify-content: space-between;
+    height: 250px;
 }
 
 footer h2 {
     color: var(--corAzulClaro);
-    text-align: left;
-    padding-bottom: 10px;
     margin-left: 40px;
     margin-right: 40px;
 }

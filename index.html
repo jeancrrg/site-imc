@@ -3,15 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora IMC</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Bootstrap Js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
     <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+
+    <title>Calculadora IMC</title>
 </head>
 <body>
     <header>
         <img src="imagens/logo.png" alt="ícone">
 
-        <div class="titulo">
+        <div id="titulo">
             <h1>
                 CALCULADORA DE IMC
             </h1>
@@ -20,8 +28,12 @@
             </p>
         </div>
 
-        <button>Entrar</button>
-        <button>Cadastrar</button>
+        <button class="botao">
+            Entrar
+        </button>
+        <button class="botao">
+            Cadastrar
+        </button>
     </header>
 
     <nav>
@@ -48,23 +60,46 @@
 
         <img src="imagens/calculo-imc.png" alt="cálculo IMC">
 
-        <div id="calculadora">
+        <div id="importanciaIMC">
+            <div id="textoImportanciaIMC">
+                <h2>
+                    Importância do IMC
+                </h2>
+        
+                <p>
+                    A classificação pode ajudar a identificar problemas de obesidade ou desnutrição, em crianças, adolescentes, adultos e idosos.
+                    <br>
+                    Além de calcular o valor de IMC, esta calculadora também indica qual o intervalo de peso ideal que deve ter para garantir uma melhor qualidade de vida.
+                    <br>
+                    Ter um peso dentro do intervalo de peso ideal ajuda ainda a evitar o aparecimento de várias doenças crônicas, como diabetes e hipertensão e ainda garante a qualidade de vida
+                </p>
+
+                <p>
+                    Descubra agora o seu IMC!
+                </p>
+
+                <button class="botao">
+                    Calcular IMC
+                </button>
+            </div>
+
+            <div id="calculadoraIMC">
+                <p>ola
+
+                </p>
+            </div>
+        </div>
+
+        <div id="resultadoIMC">
             <h2>
-                Importância do IMC
+                Resultado
             </h2>
-    
+
             <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit eos sint officia soluta. Laboriosam qui minus quo nobis ut quam, voluptatem praesentium, iste, dolorem earum reiciendis consectetur magnam amet esse.
+                Seu resultado foi:
             </p>
         </div>
 
-        <h2>
-            Calculadora
-        </h2>
-
-        <p>
-            Descubra agora o seu IMC
-        </p>
 
         <h2>
             Classificação
@@ -107,6 +142,7 @@
                     <li>Guilherme</li>
                     <li>Jean</li>
                     <li>Leonardo</li>
+                    <li>Petterson</li>
                     <li>Raphael</li>
                 </ul>
             </p>
