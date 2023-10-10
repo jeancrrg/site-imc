@@ -82,6 +82,7 @@ nav > a {
     text-decoration: none;
     font-weight: bold;
     transition: 0.5s;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.548);
 }
 
 nav > a:hover {
@@ -97,16 +98,17 @@ main {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.483);
 }
 
-main h2 {
+main > h2 {
     color: var(--corAzulEscuro);
     font-size: 1.5em;
     font-weight: bold;
     text-indent: 30px;
     padding: 30px;
     margin: 0px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.548);
 }
 
-main p {
+main > p {
     font-size: 1em;
     text-indent: 30px;
     text-align: justify;
@@ -116,7 +118,7 @@ main p {
     margin: 0px;
 }
 
-main img {
+main > img {
     padding: 30px;
     margin-left: 25px;
 }
@@ -124,62 +126,77 @@ main img {
 #importanciaIMC {
     color: white;
     background-image: linear-gradient(to bottom, var(--corAzulEscuro), var(--corAzulClaro));
-    min-width: 300px;
-    max-width: 1200px;
     height: 600px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-}
-
-#importanciaIMC h2 {
-    color: white;
-    font-weight: bold;
-    margin: 10px;
-    text-indent: 20px;
+    justify-content: center;
+    padding: 40px;
 }
 
 #textoImportanciaIMC {
-    width: 400px;
+    height: 530px;
+    width: 595px;
+    text-align: justify;
+    text-indent: 25px;
+    font-size: 1em;
+    line-height: 2em;
+    margin-right: 50px;
+}
+
+#textoImportanciaIMC > h2 {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 30px 0px;
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.548);
+}
+
+#textoImportanciaIMC > button {
+    margin-left: 175px;
 }
 
 #calculadoraIMC {
     background-color: white;
     border-radius: 16px;
-    max-width: 432px;
-    height: 300px;
+    height: 530px;
+    width: 595px;
 }
 
 #resultadoIMC {
     color: white;
     background-color: var(--corCinza);
+    height: 200px;
+    padding: 50px;
 }
 
 #resultadoIMC h2 {
     color: var(--corAzulClaro);
 }
 
+.rodape {
+    margin: 0px 70px;
+}
+
 footer {
     color: white;
     background-color: var(--corAzulEscuro);
-    font-size: 1em;
-    padding: 5px;
     display: flex;
     align-items: center;
     /* Distribui os elementos horizontalmente */
     justify-content: space-between;
-    height: 250px;
+    height: 170px;
 }
 
 footer h2 {
     color: var(--corAzulClaro);
-    margin-left: 40px;
-    margin-right: 40px;
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 footer p {
-    margin-left: 40px;
-    margin-right: 40px;
+    font-size: 1em;
 }
 
-
+footer ul {
+    columns: 2;
+}
