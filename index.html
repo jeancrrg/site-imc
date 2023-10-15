@@ -46,8 +46,8 @@
 
         <img src="imagens/calculo-imc.png" alt="cálculo IMC">
 
-        <div id="importanciaIMC">
-            <div id="textoImportanciaIMC">
+        <div id="importancia-imc">
+            <div id="texto-importancia-imc">
                 <h2> Importância do IMC </h2>
         
                 <p>
@@ -62,24 +62,55 @@
                 <p>
                     Descubra agora o seu IMC e tenha uma melhor qualidade de vida!
                 </p>
-
-                <button class="botao"> Calcular IMC </button>
             </div>
 
-            <div id="calculadoraIMC">
-                <p>
-                    ola
-                </p>
+            <div id="calculadora-imc">
+                <form action="calcularImc.java" autocomplete="off">
+                    
+                    <label for="sexo" class="label-calculadora"> Sexo: </label>
+                    <div class="alinhamento">
+                        <button id="botao-masculino-calculadora">
+                            <img src="imagens/icone-masculino.png" alt="ícone masculino">
+                            <span> Masculino </span>
+                        </button>
+                        
+                        <button id="botao-feminino-calculadora">
+                            <img src="imagens/icone-feminino.png" alt="ícone feminino">
+                            <span> Feminino </span>                            
+                        </button>
+                    </div>
+
+                    <label for="idade" class="label-calculadora"> Idade: </label>
+                    <div class="alinhamento">
+                        <input id="idade" type="number" class="input-calculadora" placeholder="Ex: 30">
+                        <p> anos </p>
+                    </div>
+
+                    <label for="altura" class="label-calculadora"> Altura: </label>
+                    <div class="alinhamento">
+                        <input id="altura" type="number" class="input-calculadora"
+                        placeholder="Ex: 1,75">
+                        <p> cm </p>
+                    </div>
+
+                    <label for="peso" class="label-calculadora"> Peso: </label>
+                    <div class="alinhamento">
+                        <input id="peso" type="number" class="input-calculadora"
+                        placeholder="Ex: 78,8">
+                        <p> kg </p>
+                    </div>
+
+                    <button id="botao-calcular-calculadora"> CALCULAR </button>
+                </form>
             </div>
         </div>
 
-        <div id="resultadoIMC">
+        <div id="resultado-imc">
             <h2> Resultado </h2>
             <p>
-                Seu resultado foi:
+                Seu IMC é:
             </p>
         </div>
-
 
         <h2> Classificação </h2>
         <p>
@@ -91,12 +122,61 @@
         </p>
 
         <p>
-            Ter um peso dentro do intervalo de peso ideal ajuda ainda a evitar o aparecimento de várias doenças crônicas, como diabetes e hipertensão. 
+            Ter um peso dentro do intervalo de peso ideal ajuda ainda a evitar o aparecimento de várias doenças crônicas, como diabetes e hipertensão garantindo um estilo de vida saudável
         </p>
 
         <p>
-            Estilo de vida saudável
+            Medidas de risco da circunferência abdominal Homem: 94cm Mulheres: 80cm
         </p>
+
+        <!-- Hierarquia de tabelas (simples)
+             TABLE = tabela
+                TABLE ROW = linha da tabela (tr)
+                    TABLE HEADER = cabeçalho da tabela
+                    TABLE DATA = dado da tabela (td) -->
+        <table class="tabela-classificacao-imc">
+            <tr class="cabecalho-tabela">
+                <td> IMC </td>
+                <td> Classificação </td>
+            </tr>
+            
+            <tr class="linha-azul">
+                <td> Menor que 18,5 </td>
+                <td> Abaixo do normal </td>
+            </tr>
+
+            <tr>
+                <td> 18,5 a 24,9 </td>
+                <td> Normal </td>
+            </tr>
+            
+            <tr class="linha-azul"> 
+                <td> 25 a 29,9 </td>
+                <td> Sobrepeso </td>
+            </tr>
+
+            <tr>
+                <td> 30 a 39,9 </td>
+                <td> Obesidade Grau 1 </td>
+            </tr>
+            
+            <tr class="linha-azul">
+                <td> 35 a 39,9 </td>
+                <td> Obesidade Grau 2 </td>
+            </tr>
+
+            <tr>
+                <td> Acima de 40 </td>
+                <td> Obesidade Grau 3 </td>
+            </tr>
+        </table>
+
+        <h2> O que fazer para melhorar o IMC? </h2>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus porro eaque dolore dignissimos esse praesentium nostrum non ipsam deserunt, maxime veniam veritatis cum quae officia harum dolores dolorem ea tenetur.
+        </p>
+
     </main>
 
     <footer>
