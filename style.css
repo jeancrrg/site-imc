@@ -60,7 +60,7 @@ header h1 {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.548);
 }
 
-header p {
+header h3 {
     color: white;
     font-family: var(--fonte-titulo);
     text-align: center;
@@ -104,6 +104,7 @@ main {
     background-color: white;
     min-width: 300px;
     max-width: 1200px;
+    padding-top: 20px;
     margin: auto;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.483);
 }
@@ -113,9 +114,9 @@ main > h2 {
     font-size: 1.6em;
     font-weight: bold;
     text-indent: 30px;
-    padding: 35px;
+    padding: 25px 50px;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.548);
     margin: 0px;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.548);
 }
 
 main > p {
@@ -124,13 +125,12 @@ main > p {
     text-align: justify;
     /* Espaçamento entre linhas */
     line-height: 2em;
-    padding: 0px 35px;
+    padding: 5px 50px;
     margin: 0px;
 }
 
 main > img {
-    padding: 30px;
-    margin-left: 25px;
+    margin: 10px 75px 20px 75px;
 }
 
 #importancia-imc {
@@ -145,7 +145,7 @@ main > img {
 
 #texto-importancia-imc {
     height: 530px;
-    width: 595px;
+    width: 685px;
 }
 
 #texto-importancia-imc > h2 {
@@ -153,7 +153,7 @@ main > img {
     font-family: var(--fonte-titulo);
     font-size: 1.8em;
     font-weight: bold;
-    margin: 30px 115px;
+    margin: 25px 10px 35px 175px;
     text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.548);
 }
 
@@ -161,9 +161,9 @@ main > img {
     font-size: 1.1em;
     font-family: var(--fonte-padrao);
     text-align: justify;
-    text-indent: 25px;
+    text-indent: 30px;
     line-height: 2em;
-    margin-right: 50px;
+    margin: 20px 85px 20px 30px;
 }
 
 #calculadora-imc {
@@ -245,6 +245,7 @@ main > img {
     background-color: var(--cor-cinza);
     height: 200px;
     padding: 50px;
+    margin-bottom: 20px;
 }
 
 #resultado-imc h2 {
@@ -257,6 +258,7 @@ main > img {
     width: 500px;
     /* Tira os espaços entre linhas */
     border-collapse: collapse;
+    border-radius: 10px;
     border: 1px solid var(--cor-borda-tabela);
     margin: 40px 60px;
 }
