@@ -240,6 +240,10 @@ main > img {
     cursor: pointer;
 }
 
+.hidden {
+    display: none;
+}
+
 #resultado-imc {
     color: white;
     background-color: var(--cor-cinza);
@@ -260,7 +264,7 @@ main > img {
     border-collapse: collapse;
     border-radius: 10px;
     border: 1px solid var(--cor-borda-tabela);
-    margin: 40px 60px;
+    margin: 40px 77px;
 }
 
 .tabela-classificacao-imc tr.cabecalho-tabela {

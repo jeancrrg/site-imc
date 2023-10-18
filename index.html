@@ -10,14 +10,14 @@
     <!-- Bootstrap Js -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
 
     <title> Calculadora IMC </title>
 </head>
 <body>
     <header>
-        <img src="imagens/logo.png" alt="ícone">
+        <img src="images/logo.png" alt="ícone">
 
         <div id="titulo">
             <h1> CALCULADORA DE IMC </h1>
@@ -44,7 +44,7 @@
             Para obter o IMC, basta dividir o seu peso (em quilos) pela altura (em metros) elevada ao quadrado (altura x altura). De acordo com o indicador, o peso considerado saudável é aquele situado entre 18,5 e 24,9.
         </p>
 
-        <img src="imagens/calculo-imc.png" alt="cálculo IMC">
+        <img src="images/calculo-imc.png" alt="cálculo IMC">
 
         <div id="importancia-imc">
             <div id="texto-importancia-imc">
@@ -65,39 +65,43 @@
             </div>
 
             <div id="calculadora-imc">
-                <form action="calcularImc.java" autocomplete="off">
+                <form id="form" autocomplete="off">
                     
                     <label for="sexo" class="label-calculadora"> Sexo: </label>
                     <div class="alinhamento">
                         <button id="botao-masculino-calculadora">
-                            <img src="imagens/icone-masculino.png" alt="ícone masculino">
+                            <img src="images/icone-masculino.png" alt="ícone masculino">
                             <span> Masculino </span>
                         </button>
                         
                         <button id="botao-feminino-calculadora">
-                            <img src="imagens/icone-feminino.png" alt="ícone feminino">
+                            <img src="images/icone-feminino.png" alt="ícone feminino">
                             <span> Feminino </span>                            
                         </button>
                     </div>
 
                     <label for="idade" class="label-calculadora"> Idade: </label>
                     <div class="alinhamento">
-                        <input id="idade" type="number" class="input-calculadora" placeholder="Ex: 30">
-                        <p> anos </p>
+                        <input id="idade" type="text" class="input-calculadora" placeholder="Ex: 30" required>
+                        <span>
+                            anos
+                        </span>
                     </div>
 
                     <label for="altura" class="label-calculadora"> Altura: </label>
                     <div class="alinhamento">
-                        <input id="altura" type="number" class="input-calculadora"
-                        placeholder="Ex: 1,75">
-                          <p> m </p>
+                        <input id="altura" type="text" class="input-calculadora" placeholder="Ex: 1,75" required>
+                        <span>
+                            m
+                        </span>
                     </div>
 
                     <label for="peso" class="label-calculadora"> Peso: </label>
                     <div class="alinhamento">
-                        <input id="peso" type="number" class="input-calculadora"
-                        placeholder="Ex: 78,8">
-                        <p> kg </p>
+                        <input id="peso" type="text" class="input-calculadora" placeholder="Ex: 78,8" required>
+                        <span>
+                            kg
+                        </span>
                     </div>
 
                     <button id="botao-calcular-calculadora"> CALCULAR </button>
@@ -105,14 +109,18 @@
             </div>
         </div>
 
-        <div id="resultado-imc">
+        <div id="resultado-imc" class="hidden">
             <h2> Resultado </h2>
-            <p>
-                Seu IMC é:
-            </p>
+
+            <div>
+                <p>
+                    Seu IMC é:
+                </p>
+                <span id="valor-imc"></span>
+            </div>
         </div>
 
-        <h2> Classificação </h2>
+        <h2> Entenda seu resultado </h2>
         <p>
             A classificação do índice de massa corporal (IMC) pode ajudar a identificar problemas de obesidade ou desnutrição, em crianças, adolescentes, adultos e idosos.
         </p>
@@ -182,7 +190,7 @@
     <footer>
 
         <div class="rodape">
-            <img src="imagens/logo-uniessa.png" alt="Logo Uniessa">
+            <img src="images/logo-uniessa.png" alt="Logo Uniessa">
         </div>
 
         <div class="rodape">
@@ -207,5 +215,7 @@
             </p>
         </div>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
