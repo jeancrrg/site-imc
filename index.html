@@ -9,7 +9,10 @@
 
     <!-- Bootstrap Js -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
+    
+    <!-- Font Awesome (Ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
 
@@ -67,41 +70,46 @@
             <div id="calculadora-imc">
                 <form id="form" autocomplete="off">
                     
-                    <label for="sexo" class="label-calculadora"> Sexo: </label>
-                    <div class="alinhamento">
-                        <button id="botao-masculino-calculadora">
-                            <img src="images/icone-masculino.png" alt="ícone masculino">
-                            <span> Masculino </span>
-                        </button>
-                        
-                        <button id="botao-feminino-calculadora">
-                            <img src="images/icone-feminino.png" alt="ícone feminino">
-                            <span> Feminino </span>                            
-                        </button>
+                    <div class="input-box">
+                        <label for="sexo" class="label-calculadora"> Sexo: </label>
+                        <div class="alinhamento">
+                            <button id="botao-masculino-calculadora">
+                                <i class="fa-solid fa-mars"></i>
+                                <span> Masculino </span>
+                            </button>
+                            
+                            <button id="botao-feminino-calculadora">
+                                <i class="fa-solid fa-venus"></i>
+                                <span> Feminino </span>                            
+                            </button>
+                        </div>
                     </div>
 
-                    <label for="idade" class="label-calculadora"> Idade: </label>
-                    <div class="alinhamento">
-                        <input id="idade" type="text" class="input-calculadora" placeholder="Ex: 30" required>
-                        <span>
-                            anos
-                        </span>
+                    <div>
+                        <label for="idade" class="label-calculadora"> Idade: </label>
+                        <div class="input-field">
+                            <i class="fa-regular fa-calendar"></i>
+                            <input id="idade" type="number" class="input-calculadora" placeholder="Ex: 30" required>
+                            <span> anos </span>
+                        </div>
                     </div>
 
-                    <label for="altura" class="label-calculadora"> Altura: </label>
-                    <div class="alinhamento">
-                        <input id="altura" type="text" class="input-calculadora" placeholder="Ex: 1,75" required>
-                        <span>
-                            m
-                        </span>
+                    <div>
+                        <label for="altura" class="label-calculadora"> Altura: </label>
+                        <div class="input-field">
+                            <i class="fa-solid fa-ruler"></i>
+                            <input id="altura" type="number" class="input-calculadora" placeholder="Ex: 1,75" required>
+                            <span> m </span>
+                        </div>
                     </div>
 
-                    <label for="peso" class="label-calculadora"> Peso: </label>
-                    <div class="alinhamento">
-                        <input id="peso" type="text" class="input-calculadora" placeholder="Ex: 78,8" required>
-                        <span>
-                            kg
-                        </span>
+                    <div>
+                        <label for="peso" class="label-calculadora"> Peso: </label>
+                        <div class="input-field">
+                            <i class="fa-solid fa-weight-hanging"></i>
+                            <input id="peso" type="number" class="input-calculadora" placeholder="Ex: 78,8" required>
+                            <span> kg </span>
+                        </div>
                     </div>
 
                     <button id="botao-calcular-calculadora"> CALCULAR </button>
@@ -109,12 +117,14 @@
             </div>
         </div>
 
-        <div id="resultado-imc" class="hidden">
+        <div id="resultado-imc">
             <div id="imc">
                 <h2> Resultado </h2>
                 <span> Seu IMC é: </span>
-                <span id="valor-imc"></span>
-                <span id="descricao-resultado"></span>
+                <div id="resultado" class="hidden">
+                    <span id="valor-imc"></span>
+                    <span id="descricao-resultado"></span>
+                </div>
             </div>
         </div>
 
@@ -135,47 +145,51 @@
             Medidas de risco da circunferência abdominal Homem: 94cm Mulheres: 80cm.
         </p>
 
-        <!-- Hierarquia de tabelas (simples)
-             TABLE = tabela
-                TABLE ROW = linha da tabela (tr)
-                    TABLE HEADER = cabeçalho da tabela
-                    TABLE DATA = dado da tabela (td) -->
-        <table class="tabela-classificacao-imc">
-            <tr class="cabecalho-tabela">
-                <td> IMC </td>
-                <td> Classificação </td>
-            </tr>
-            
-            <tr class="linha-azul">
-                <td> Menor que 18,5 </td>
-                <td> Abaixo do normal </td>
-            </tr>
+        <div class="alinhamento">
+            <!-- Hierarquia de tabelas (simples)
+                TABLE = tabela
+                    TABLE ROW = linha da tabela (tr)
+                        TABLE HEADER = cabeçalho da tabela
+                        TABLE DATA = dado da tabela (td) -->
+            <table class="tabela-classificacao-imc">
+                <tr class="cabecalho-tabela">
+                    <td> IMC </td>
+                    <td> Classificação </td>
+                </tr>
+                
+                <tr class="linha-azul">
+                    <td> Menor que 18,5 </td>
+                    <td> Abaixo do normal </td>
+                </tr>
 
-            <tr>
-                <td> 18,5 a 24,9 </td>
-                <td> Normal </td>
-            </tr>
-            
-            <tr class="linha-azul"> 
-                <td> 25 a 29,9 </td>
-                <td> Sobrepeso </td>
-            </tr>
+                <tr>
+                    <td> 18,5 a 24,9 </td>
+                    <td> Normal </td>
+                </tr>
+                
+                <tr class="linha-azul"> 
+                    <td> 25 a 29,9 </td>
+                    <td> Sobrepeso </td>
+                </tr>
 
-            <tr>
-                <td> 30 a 39,9 </td>
-                <td> Obesidade Grau 1 </td>
-            </tr>
-            
-            <tr class="linha-azul">
-                <td> 35 a 39,9 </td>
-                <td> Obesidade Grau 2 </td>
-            </tr>
+                <tr>
+                    <td> 30 a 39,9 </td>
+                    <td> Obesidade Grau 1 </td>
+                </tr>
+                
+                <tr class="linha-azul">
+                    <td> 35 a 39,9 </td>
+                    <td> Obesidade Grau 2 </td>
+                </tr>
 
-            <tr>
-                <td> Acima de 40 </td>
-                <td> Obesidade Grau 3 </td>
-            </tr>
-        </table>
+                <tr>
+                    <td> Acima de 40 </td>
+                    <td> Obesidade Grau 3 </td>
+                </tr>
+            </table>
+
+            <img src="images/medicina.png" alt="Imagem medicina">
+        </div>
 
         <h2> O que fazer para melhorar o IMC? </h2>
 

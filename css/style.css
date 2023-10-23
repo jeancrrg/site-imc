@@ -16,7 +16,8 @@
     --cor-linha-tabela: #EDFAFF;
     --cor-borda-tabela: #9CE4FF;
     --cor-azul-bem-claro: #b2e4f1;
-    --cor-rosa-claro: #fcacef;
+    --cor-rosa-claro: #f181ef96;
+    --cor-rosa-escuro: #f109ec;
     
     --fonte-titulo: 'Times New Roman', 'Times, serif';
     --fonte-padrao: 'Rubik', 'Arial, Verdana', 'Helvetica', 'sans-serif';
@@ -166,6 +167,12 @@ main > img {
     margin: 20px 85px 20px 30px;
 }
 
+.alinhamento {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
 #calculadora-imc {
     color: black;
     background-color: white;
@@ -176,14 +183,44 @@ main > img {
     box-shadow: 4px 4px 7px 0px rgba(0, 0, 0, 0.363);
 }
 
-.alinhamento {
-    display: flex;
-    align-items: center;
-    justify-content: left;
+.label-calculadora {
+    font-weight: bold;
+    margin-left: 10px;
 }
 
-.alinhamento > p {
-    margin-bottom: 28px;
+.input-field {
+    height: 50px;
+    width: 215px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    margin: 0px 10px 25px 10px;
+}
+
+.input-field i, 
+.input-field span {
+    font-size: 18px;
+    padding: 20px;
+}
+
+.input-calculadora {
+    height: 100%;
+    width: 100%;
+    padding: 16px;
+    border: none;
+}
+
+/* Retira as setas */
+.input-calculadora::-webkit-outer-spin-button,
+.input-calculadora::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+/* Retira a borda ao clicar */
+.input-calculadora:focus {
+    outline: none;
 }
 
 #botao-masculino-calculadora {
@@ -200,6 +237,12 @@ main > img {
     align-items: center;
 }
 
+#botao-masculino-calculadora > i {
+    font-size: 20px;
+    padding: 20px;
+    color: var(--cor-azul-claro);
+}
+
 #botao-feminino-calculadora {
     height: 46px;
     width: 160px;
@@ -214,18 +257,10 @@ main > img {
     align-items: center;
 }
 
-.label-calculadora {
-    font-weight: bold;
-    margin-left: 10px;
-}
-
-.input-calculadora {
-    height: 46px;
-    width: 120px;
-    padding: 16px;
-    margin: 0px 10px 30px 10px;
-    border-radius: 4px;
-    border: 1px solid lightgray;
+#botao-feminino-calculadora > i {
+    font-size: 20px;
+    padding: 20px;
+    color: var(--cor-rosa-escuro);
 }
 
 #botao-calcular-calculadora {

@@ -13,7 +13,7 @@ form.addEventListener('submit', function(event) {
     const valorImc = document.getElementById('valor-imc');
     let descricaoResultado = '';
 
-    document.getElementById('resultado-imc').classList.remove('hidden');
+    document.getElementById('resultado').classList.remove('hidden');
 
     if (imc < 18.5) {
         descricaoResultado = 'Cuidado! Você está abaixo do peso!'
@@ -31,6 +31,5 @@ form.addEventListener('submit', function(event) {
 
     valorImc.textContent = imc.replace('.', ',');
     document.getElementById('descricao-resultado').textContent = descricaoResultado;
-
 
 });
