@@ -110,7 +110,7 @@ main {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.483);
 }
 
-main > h2 {
+main > div > h2 {
     color: var(--cor-azul-escuro);
     font-size: 1.6em;
     font-weight: bold;
@@ -120,7 +120,7 @@ main > h2 {
     margin: 0px;
 }
 
-main > p {
+main > div > p {
     font-size: 1em;
     text-indent: 30px;
     text-align: justify;
@@ -130,7 +130,7 @@ main > p {
     margin: 0px;
 }
 
-main > img {
+main > div > img {
     margin: 10px 75px 20px 75px;
 }
 
@@ -212,12 +212,6 @@ main > img {
     border: none;
 }
 
-/* Retira as setas */
-.input-calculadora::-webkit-outer-spin-button,
-.input-calculadora::-webkit-inner-spin-button {
-    appearance: none;
-}
-
 /* Retira a borda ao clicar */
 .input-calculadora:focus {
     outline: none;
@@ -238,8 +232,8 @@ main > img {
 }
 
 #botao-masculino-calculadora > i {
-    font-size: 20px;
-    padding: 20px;
+    font-size: 23px;
+    padding: 0px 18px;
     color: var(--cor-azul-claro);
 }
 
@@ -258,8 +252,8 @@ main > img {
 }
 
 #botao-feminino-calculadora > i {
-    font-size: 20px;
-    padding: 20px;
+    font-size: 23px;
+    padding: 0px 18px;
     color: var(--cor-rosa-escuro);
 }
 

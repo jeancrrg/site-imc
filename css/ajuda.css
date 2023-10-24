@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+:root {
+    --corCinza: #455A64;
+    --corAzulEscuro: #0066D1;
+    --corAzulClaro: #00A3FD;
+    --corAzulClaroFundo: #D9EBFC;
+    --corVermelho: #D50054;
+    --corAzulFonte: #0063CF;
+
+    --fonteTitulo: 'Times New Roman', 'Times, serif';
+    --fontePadrao: 'Arial, Verdana', 'Helvetica', 'sans-serif';
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--corAzulClaroFundo);
+    font-family: var(--fontePadrao);
+}
+
+header {
+    background-image: linear-gradient(to bottom, var(--corAzulEscuro), var(--corAzulClaro));
+    min-height: 120px;
+    padding: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header img {
+    padding-left: 80px;
+}
+
+header h1 {
+    color: white;
+    font-family: var(--fonteTitulo);
+    font-size: 2em;
+    flex-grow: 1;
+
+}
+
+
+.faq h3{
+    color: white;
+    background-color: var(--corAzulEscuro);
+    
+}
+
+.faq p{
+    color: var(--corAzulEscuro);
+    font-family: var(--fontePadrao);
+}
+/* Adicione estilos para as seções conforme necessário */
+.faq,
+.user-guide {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.user-guide h3{
+    color: white;
+    background-color: var(--corAzulEscuro);
+    
+}
+
+.user-guide p{
+    color: var(--corAzulEscuro);
+    font-family: var(--fontePadrao);
+}
+
+footer {
+    background-color: var(--corAzulEscuro);
+    display: flex;
+    align-items: center;
+    /* Distribui os elementos horizontalmente */
+    justify-content: space-between;
+    height: 170px;
+}
+
+footer h2 {
+    color: var(--corAzulClaro);
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+footer p {
+    font-size: 1em;
+}
+
+.rodape {
+    margin: 0px 70px;
+}
+
+footer ul {
+    /* Emoji antes da lista (Emojipedia) (00A0 = espaço) */
+    list-style-type: '\2714\00A0\00A0';
+    /* Bolinha da lista pro lado de dentro */
+    list-style-position: inside;
+    columns: 2;
+}

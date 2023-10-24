@@ -37,17 +37,19 @@
     </nav>
 
     <main>
-        <h2> O que é IMC? </h2>
-        <p>
-            O Índice de Massa Corporal (IMC) é uma das principais ferramentas, adotada inclusive pela Organização Mundial de Saúde (OMS), para calcular o chamado “peso ideal”. Obtido a partir do peso e da altura do indivíduo, o IMC também aponta níveis de magreza e obesidade, que são usados para nortear o trabalho de profissionais de saúde e de educadores físicos.
-        </p>
+        <div>
+            <h2> O que é IMC? </h2>
+            <p>
+                O Índice de Massa Corporal (IMC) é uma das principais ferramentas, adotada inclusive pela Organização Mundial de Saúde (OMS), para calcular o chamado “peso ideal”. Obtido a partir do peso e da altura do indivíduo, o IMC também aponta níveis de magreza e obesidade, que são usados para nortear o trabalho de profissionais de saúde e de educadores físicos.
+            </p>
 
-        <h2> Como calcular o IMC </h2>
-        <p>
-            Para obter o IMC, basta dividir o seu peso (em quilos) pela altura (em metros) elevada ao quadrado (altura x altura). De acordo com o indicador, o peso considerado saudável é aquele situado entre 18,5 e 24,9.
-        </p>
+            <h2> Como calcular o IMC </h2>
+            <p>
+                Para obter o IMC, basta dividir o seu peso (em quilos) pela altura (em metros) elevada ao quadrado (altura x altura). De acordo com o indicador, o peso considerado saudável é aquele situado entre 18,5 e 24,9.
+            </p>
 
-        <img src="images/calculo-imc.png" alt="cálculo IMC">
+            <img src="images/calculo-imc.png" alt="cálculo IMC">
+        </div>
 
         <div id="importancia-imc">
             <div id="texto-importancia-imc">
@@ -73,12 +75,12 @@
                     <div class="input-box">
                         <label for="sexo" class="label-calculadora"> Sexo: </label>
                         <div class="alinhamento">
-                            <button id="botao-masculino-calculadora">
+                            <button id="botao-masculino-calculadora" onclick="selecionarMasculino()">
                                 <i class="fa-solid fa-mars"></i>
                                 <span> Masculino </span>
                             </button>
                             
-                            <button id="botao-feminino-calculadora">
+                            <button id="botao-feminino-calculadora" onclick="selecionarFeminino()">
                                 <i class="fa-solid fa-venus"></i>
                                 <span> Feminino </span>                            
                             </button>
@@ -89,7 +91,8 @@
                         <label for="idade" class="label-calculadora"> Idade: </label>
                         <div class="input-field">
                             <i class="fa-regular fa-calendar"></i>
-                            <input id="idade" type="number" class="input-calculadora" placeholder="Ex: 30" required>
+                            <input id="idade" type="text" class="input-calculadora" placeholder="Ex: 30" required maxlength="3"
+                            oninput="validarEntrada(event)">
                             <span> anos </span>
                         </div>
                     </div>
@@ -98,7 +101,8 @@
                         <label for="altura" class="label-calculadora"> Altura: </label>
                         <div class="input-field">
                             <i class="fa-solid fa-ruler"></i>
-                            <input id="altura" type="number" class="input-calculadora" placeholder="Ex: 1,75" required>
+                            <input id="altura" type="text" class="input-calculadora" placeholder="Ex: 1.75" required maxlength="4"
+                            oninput="validarEntrada(event)">
                             <span> m </span>
                         </div>
                     </div>
@@ -107,7 +111,8 @@
                         <label for="peso" class="label-calculadora"> Peso: </label>
                         <div class="input-field">
                             <i class="fa-solid fa-weight-hanging"></i>
-                            <input id="peso" type="number" class="input-calculadora" placeholder="Ex: 78,8" required>
+                            <input id="peso" type="text" class="input-calculadora" placeholder="Ex: 78.8" required maxlength="4"
+                            oninput="validarEntrada(event)">
                             <span> kg </span>
                         </div>
                     </div>
@@ -128,22 +133,24 @@
             </div>
         </div>
 
-        <h2> Entenda seu resultado </h2>
-        <p>
-            A classificação do índice de massa corporal (IMC) pode ajudar a identificar problemas de obesidade ou desnutrição, em crianças, adolescentes, adultos e idosos.
-        </p>
+        <div>
+            <h2> Entenda seu resultado </h2>
+            <p>
+                A classificação do índice de massa corporal (IMC) pode ajudar a identificar problemas de obesidade ou desnutrição, em crianças, adolescentes, adultos e idosos.
+            </p>
 
-        <p>
-            Além de calcular o valor de IMC, esta calculadora também indica qual o intervalo de peso ideal que deve ter para garantir uma melhor qualidade de vida.
-        </p>
+            <p>
+                Além de calcular o valor de IMC, esta calculadora também indica qual o intervalo de peso ideal que deve ter para garantir uma melhor qualidade de vida.
+            </p>
 
-        <p>
-            Ter um peso dentro do intervalo de peso ideal ajuda ainda a evitar o aparecimento de várias doenças crônicas, como diabetes e hipertensão garantindo um estilo de vida saudável.
-        </p>
+            <p>
+                Ter um peso dentro do intervalo de peso ideal ajuda ainda a evitar o aparecimento de várias doenças crônicas, como diabetes e hipertensão garantindo um estilo de vida saudável.
+            </p>
 
-        <p>
-            Medidas de risco da circunferência abdominal Homem: 94cm Mulheres: 80cm.
-        </p>
+            <p>
+                Medidas de risco da circunferência abdominal Homem: 94cm Mulheres: 80cm.
+            </p>
+        </div>
 
         <div class="alinhamento">
             <!-- Hierarquia de tabelas (simples)
@@ -191,16 +198,16 @@
             <img src="images/medicina.png" alt="Imagem medicina">
         </div>
 
-        <h2> O que fazer para melhorar o IMC? </h2>
+        <div>
+            <h2> O que fazer para melhorar o IMC? </h2>
 
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus porro eaque dolore dignissimos esse praesentium nostrum non ipsam deserunt, maxime veniam veritatis cum quae officia harum dolores dolorem ea tenetur.
-        </p>
-
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus porro eaque dolore dignissimos esse praesentium nostrum non ipsam deserunt, maxime veniam veritatis cum quae officia harum dolores dolorem ea tenetur.
+            </p>
+        </div>
     </main>
 
     <footer>
-
         <div class="rodape">
             <img src="images/logo-uniessa.png" alt="Logo Uniessa">
         </div>
