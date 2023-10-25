@@ -1,5 +1,6 @@
 const form = document.getElementById('form');
 
+// Calcula o IMC
 form.addEventListener('submit', function(event) {
     // Impede o carregamento da página ao enviar
     event.preventDefault();
@@ -8,15 +9,15 @@ form.addEventListener('submit', function(event) {
     const peso = document.getElementById('peso').value;
     const altura = document.getElementById('altura').value;
 
-    if (idade = 0 || idade >= 110) {
+    if (idade <= 0 || idade >= 110) {
         alert('Idade inválida, verifique!');
     }
 
-    if (peso = 0 || peso > 200) {
+    if (peso <= 0 || peso > 200) {
         alert('Peso inválido, verifique!');
     }
 
-    if (altura = 0 || altura > 2.50) {
+    if (altura <= 0 || altura > 2.50) {
         alert('Altura inválida, verifique!');
     }
 
@@ -42,17 +43,43 @@ form.addEventListener('submit', function(event) {
         descricaoResultado = 'Cuidado! Você está com obesidade morbida!'
     }
 
+    // Mostra na tela
     valorImc.textContent = imc.replace('.', ',');
     document.getElementById('descricao-resultado').textContent = descricaoResultado;
 
+    rolarTela();
+    
 });
+
+// Rola a tela para o resultado
+function rolarTela() {
+    const elementoAlvo = document.getElementById('resultado-imc');
+    const deslocamento = elementoAlvo.getBoundingClientRect().top;
+    const posicaoInicialY = window.scrollY;
+    // Tempo em milissegundos para a rolagem
+    const duracao = 1000;
+
+    function animarRolagem(timestamp) {
+        const tempoAtual = Date.now();
+        const progresso = Math.min((tempoAtual - inicio) / duracao, 1);
+
+        window.scrollTo(0, posicaoInicialY + progresso * deslocamento);
+
+        if (progresso < 1) {
+            requestAnimationFrame(animarRolagem);
+        }
+    }
+
+    const inicio = Date.now();
+    requestAnimationFrame(animarRolagem);
+}
 
 // Valida se no input foi passado apenas números
 function validarEntrada(event) {
     const input = event.target;
     const valor = input.value;
 
-    // Permite números e vírgulas
+    // Permite somente números e vírgulas
     const numerosComVirgula = /^[0-9.]*$/; 
 
     // Remove o último caractere inválido
