@@ -1,82 +1,165 @@
 @charset "UTF-8";
 
-:root {
-    --corCinza: #455A64;
-    --corAzulEscuro: #0066D1;
-    --corAzulClaro: #00A3FD;
-    --corAzulClaroFundo: #D9EBFC;
-    --corVermelho: #D50054;
-    --corAzulFonte: #0063CF;
+@font-face {
+    font-family: 'Rubik';
+    src: url('fonts/Rubik-VariableFont_wght.ttf') format('truetype');
+    font-style: normal;
+}
 
-    --fonteTitulo: 'Times New Roman', 'Times, serif';
-    --fontePadrao: 'Arial, Verdana', 'Helvetica', 'sans-serif';
+:root {
+    --cor-cinza: #455A64;
+    --cor-azul-escuro: #0066D1;
+    --cor-azul-claro: #00A3FD;
+    --cor-azul-claro-fundo: #D9EBFC;
+    --cor-vermelho: #D50054;
+    --cor-azul-fonte: #0063CF;
+    --cor-linha-tabela: #EDFAFF;
+    --cor-borda-tabela: #9CE4FF;
+    --cor-azul-bem-claro: #b2e4f1;
+    --cor-rosa-claro: #f181ef96;
+    --cor-rosa-escuro: #f109ec;
+    
+    --fonte-titulo: 'Times New Roman', 'Times, serif';
+    --fonte-padrao: 'Rubik', 'Arial, Verdana', 'Helvetica', 'sans-serif';
 }
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
 }
 
 body {
-    background-color: var(--corAzulClaroFundo);
-    font-family: var(--fontePadrao);
+    background-color: var(--cor-azul-claro-fundo);
+    font-family: var(--fonte-padrao);
 }
 
+
 header {
-    background-image: linear-gradient(to bottom, var(--corAzulEscuro), var(--corAzulClaro));
+    background-image: linear-gradient(to bottom, var(--cor-azul-escuro), var(--cor-azul-claro));
     min-height: 120px;
     padding: 1px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* Distribui os elementos horizontalmente */
+    justify-content: space-between;
 }
 
 header img {
     padding-left: 80px;
 }
 
+#titulo {
+    /* Permite que a div cresça e ocupe o espaço restante */
+    flex-grow: 1;
+}
+
 header h1 {
     color: white;
-    font-family: var(--fonteTitulo);
-    font-size: 2em;
-    flex-grow: 1;
+    font-family: var(--fonte-titulo);
+    font-size: 3em;
+    margin-left: 400px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.548);
+}
 
+nav {
+    background-color: var(--cor-azul-escuro);
+    padding: 15px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.363);
+}
+
+.botao {
+    color: white;
+    background-color: var(--cor-vermelho);
+    padding: 8px 15px;
+    margin: 8px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.483);
+    /* Muda o ponteiro do mouse ao passar encima */
+    cursor: pointer;
 }
 
 
-.faq h3{
-    color: white;
-    background-color: var(--corAzulEscuro);
+
+main h2 {
+    color: var(--cor-azul-escuro);
+    font-size: 1.6em;
+    font-weight: bold;
+    text-indent: 30px;
+    padding: 25px 50px;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.548);
+    margin: 0px;
+}
+
+main h3 {
+    text-indent: 30px;
+    padding: 15px 50px;
+    margin: 0px;
+}
+
+main p {
+    font-size: 1em;
+    text-indent: 30px;
+    text-align: justify;
+    /* Espaçamento entre linhas */
+    line-height: 2em;
+    padding: 5px 50px;
+    margin: 0px;
+}
+
+
+.conteiner-faq h3{
     
 }
 
-.faq p{
-    color: var(--corAzulEscuro);
-    font-family: var(--fontePadrao);
+.conteiner-faq p{
+    
 }
-/* Adicione estilos para as seções conforme necessário */
-.faq,
+
+.conteiner-faq,
 .user-guide {
-    margin: 20px;
+    margin: 60px;
     padding: 20px;
     background-color: white;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
 
 .user-guide h3{
-    color: white;
-    background-color: var(--corAzulEscuro);
     
 }
 
 .user-guide p{
-    color: var(--corAzulEscuro);
-    font-family: var(--fontePadrao);
+    
 }
 
+.faq-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+.faq-question {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .faq-arrow {
+    font-size: 1.5rem;
+    margin-right: 10px;
+  }
+
+  .faq-answer {
+    display: none;
+    margin-left: 30px;
+    padding: 10px;
+    background-color: #f0f0f0;
+  }
+
 footer {
-    background-color: var(--corAzulEscuro);
+    color: white;
+    background-color: var(--cor-azul-escuro);
     display: flex;
     align-items: center;
     /* Distribui os elementos horizontalmente */
@@ -85,7 +168,7 @@ footer {
 }
 
 footer h2 {
-    color: var(--corAzulClaro);
+    color: var(--cor-azul-claro);
     font-size: 1.5em;
     font-weight: bold;
     margin-top: 15px;
