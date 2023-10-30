@@ -1,13 +1,11 @@
-const faqQuestions = document.querySelectorAll(".faq-question");
+document.addEventListener("DOMContentLoaded", function() {
+    const perguntas = document.querySelectorAll('.pergunta');
 
-faqQuestions.forEach(question => {
-    question.addEventListener("click", () => {
-    const answer = question.nextElementElementSibling;
+    console.log('entrei');
 
-    if (answer.style.display === "block") {
-        answer.style.display = "none";
-    } else {
-        answer.style.display = "block";
-    }
+    perguntas.forEach((pergunta) => {
+        pergunta.addEventListener('click', () => {
+            pergunta.querySelector('.resposta').classList.toggle('ativa');
+        });
     });
 });

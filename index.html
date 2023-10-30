@@ -27,13 +27,13 @@
             <h3> Indicador de Massa Corporal </h3>
         </div>
 
-        <button class="botao"> 
+        <button class="botao" onclick="abrirDialogLogin()"> 
             <span>
                 <i class="fa-solid fa-right-to-bracket"></i>
                 Entrar 
             </span>
         </button>
-        <button class="botao"> 
+        <button class="botao" onclick="abrirDialogCadastro()"> 
             <span>
                 <i class="fa-solid fa-user-plus"></i>
                 Cadastrar 
@@ -57,6 +57,81 @@
         </a>
     </nav>
 
+    <!-- DIALOG LOGIN -->
+    <dialog id="dialog-login">
+        <form id="form-login" autocomplete="off">
+            <div class="alinhamento-dialog">
+                <h1> Login </h1>
+                
+                <button class="botao-fechar-dialog" onclick="fecharDialogLogin()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div>
+                <div class="input-field-dialog">
+                    <div class="icone-input">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <input id="email-login" type="email" class="input-dialog" placeholder="Email">
+                </div>
+            </div>
+
+            <div>
+                <div class="input-field-dialog">
+                    <div class="icone-input">
+                        <i class="fa-solid fa-key"></i>
+                    </div>
+                    <input id="senha-login" type="password" class="input-dialog" placeholder="Senha">
+                </div>
+            </div>
+
+            <div class="alinhamento-centro">
+                <button class="botao-dialog" type="submit" onclick="entrar()">
+                    Login
+                </button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- DIALOG CADASTRO -->
+    <dialog id="dialog-cadastro">
+        <form id="form-cadastro" autocomplete="off">
+            <div class="alinhamento-dialog">
+                <h1> Criar Conta </h1>
+                
+                <button class="botao-fechar-dialog" onclick="fecharDialogCadastro()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div>
+                <div class="input-field-dialog">
+                    <div class="icone-input">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <input id="email-cadastro" type="email" class="input-dialog" placeholder="Email">
+                </div>
+            </div>
+
+            <div>
+                <div class="input-field-dialog">
+                    <div class="icone-input">
+                        <i class="fa-solid fa-key"></i>
+                    </div>
+                    <input id="senha-cadastro" type="password" class="input-dialog" placeholder="Senha">
+                </div>
+            </div>
+
+            <div class="alinhamento-centro">
+                <button class="botao-dialog" type="submit" onclick="cadastrar()">
+                    Criar Conta
+                </button>
+            </div>
+        </form>
+    </dialog>
+
+    
     <main>
         <div>
             <h2> O que é IMC? </h2>
@@ -92,11 +167,11 @@
             </div>
 
             <div id="calculadora-imc">
-                <form id="form" autocomplete="off">
+                <form id="form-calculadora" autocomplete="off">
                     
-                    <div class="input-box">
+                    <div>
                         <label for="sexo" class="label-calculadora"> Sexo: </label>
-                        <div class="alinhamento">
+                        <div class="alinhamento-centro">
                             <button id="botao-masculino-calculadora" onclick="selecionarMasculino()">
                                 <i class="fa-solid fa-mars"></i>
                                 <span> Masculino </span>
@@ -111,7 +186,7 @@
 
                     <div>
                         <label for="idade" class="label-calculadora"> Idade: </label>
-                        <div class="input-field">
+                        <div class="input-field-calculadora">
                             <i class="fa-regular fa-calendar"></i>
                             <input id="idade" type="text" class="input-calculadora" placeholder="Ex: 30" required maxlength="3"
                             oninput="validarEntrada(event)">
@@ -121,7 +196,7 @@
 
                     <div>
                         <label for="altura" class="label-calculadora"> Altura: </label>
-                        <div class="input-field">
+                        <div class="input-field-calculadora">
                             <i class="fa-solid fa-ruler"></i>
                             <input id="altura" type="text" class="input-calculadora" placeholder="Ex: 1.75" required maxlength="4"
                             oninput="validarEntrada(event)">
@@ -131,7 +206,7 @@
 
                     <div>
                         <label for="peso" class="label-calculadora"> Peso: </label>
-                        <div class="input-field">
+                        <div class="input-field-calculadora">
                             <i class="fa-solid fa-weight-hanging"></i>
                             <input id="peso" type="text" class="input-calculadora" placeholder="Ex: 78.8" required maxlength="4"
                             oninput="validarEntrada(event)">
@@ -139,7 +214,7 @@
                         </div>
                     </div>
 
-                    <button id="botao-calcular-calculadora"> CALCULAR </button>
+                    <button id="botao-calcular-calculadora" onclick="calcularImc(event)"> CALCULAR </button>
                 </form>
             </div>
         </div>
@@ -170,7 +245,7 @@
             </p>
         </div>
 
-        <div class="alinhamento">
+        <div class="alinhamento-centro">
             <!-- Hierarquia de tabelas (simples)
                 TABLE = tabela
                     TABLE ROW = linha da tabela (tr)

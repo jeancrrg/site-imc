@@ -1,7 +1,4 @@
-const form = document.getElementById('form');
-
-// Calcula o IMC
-form.addEventListener('submit', function(event) {
+function calcularImc(event) {
     // Impede o carregamento da página ao enviar
     event.preventDefault();
 
@@ -30,28 +27,27 @@ form.addEventListener('submit', function(event) {
     document.getElementById('resultado').classList.remove('hidden');
 
     if (imc < 18.5) {
-        descricaoResultado = 'Cuidado! Você está abaixo do peso!'
+        descricaoResultado = 'Cuidado! Você está abaixo do peso!';
     } else if (imc >= 18.5 && imc <= 25) {
-        descricaoResultado = 'Parabéns! Você está no peso ideal!'
+        descricaoResultado = 'Parabéns! Você está no peso ideal!';
     } else if (imc > 25 && imc <= 30) {
-        descricaoResultado = 'Cuidado! Você está com sobrepeso!'
+        descricaoResultado = 'Cuidado! Você está com sobrepeso!';
     } else if (imc > 30 && imc <= 35) {
-        descricaoResultado = 'Cuidado! Você está com obesidade moderada!'
+        descricaoResultado = 'Cuidado! Você está com obesidade moderada!';
     } else if (imc > 35 && imc <= 40) {
-        descricaoResultado = 'Cuidade! Você está com obesidade severa!'
+        descricaoResultado = 'Cuidade! Você está com obesidade severa!';
     } else {
-        descricaoResultado = 'Cuidado! Você está com obesidade morbida!'
+        descricaoResultado = 'Cuidado! Você está com obesidade morbida!';
     }
 
     // Mostra na tela
     valorImc.textContent = imc.replace('.', ',');
     document.getElementById('descricao-resultado').textContent = descricaoResultado;
 
+    // Rola a tela para o resultado do imc
     rolarTela();
-    
-});
+};
 
-// Rola a tela para o resultado
 function rolarTela() {
     const elementoAlvo = document.getElementById('resultado-imc');
     const deslocamento = elementoAlvo.getBoundingClientRect().top;
@@ -119,4 +115,32 @@ function selecionarFeminino() {
     const botaoMasculino = document.getElementById('botao-masculino-calculadora');
     botaoMasculino.style.backgroundColor = '#b2e4f1';
     botaoMasculino.style.color = 'black';
+}
+
+function abrirDialogLogin() {
+    const dialogLogin = document.getElementById('dialog-login');
+    dialogLogin.showModal();
+}
+
+function fecharDialogLogin() {
+    const dialogLogin = document.getElementById('dialog-login');
+    dialogLogin.close();
+}
+
+function abrirDialogCadastro() {
+    const dialogCadastro = document.getElementById('dialog-cadastro');
+    dialogCadastro.showModal();
+}
+
+function fecharDialogCadastro() {
+    const dialogCadastro = document.getElementById('dialog-cadastro');
+    dialogCadastro.close();
+}
+
+function entrar() {
+
+}
+
+function cadastrar() {
+
 }

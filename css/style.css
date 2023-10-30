@@ -76,8 +76,16 @@ header h3 {
     margin: 8px;
     border-radius: 8px;
     box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.483);
+    text-decoration: none;
     /* Muda o ponteiro do mouse ao passar encima */
     cursor: pointer;
+    border: none;
+}
+
+.botao:hover {
+    color: var(--cor-azul-claro);
+    background-color: var(--cor-azul-claro-fundo);
+    text-decoration: none;
 }
 
 nav {
@@ -86,9 +94,89 @@ nav {
     box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.363);
 }
 
-nav > a:hover {
-    color: var(--cor-azul-claro);
+#dialog-login,
+#dialog-cadastro {
+    height: 375px;
+    width: 445px;
+    padding: 20px;
+    margin: auto;
     background-color: var(--cor-azul-claro-fundo);
+    border: 1px solid var(--cor-azul-escuro);
+    border-radius: 10px;
+}
+
+.alinhamento-dialog {
+    display: flex;
+    justify-content: space-between;
+}
+
+#dialog-login h1,
+#dialog-cadastro h1 {
+    text-align: center;
+    color: var(--cor-azul-fonte);
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.botao-fechar-dialog {
+    height: 27px;
+    width: 27px;
+    font-size: 18px;
+    background-color: var(--cor-azul-claro);
+    border-radius: 5px;
+    border: none;
+}
+
+.input-field-dialog {
+    height: 44px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    margin:25px 0px;
+}
+
+.icone-input {
+    background-color: var(--cor-azul-claro);
+    padding: 8px 25px 8px 12px;
+    font-size: 18px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.input-dialog {
+    height: 100%;
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Retira a borda ao clicar */
+.input-dialog:focus {
+    outline: none;
+}
+
+.botao-dialog {
+    background-color: var(--cor-azul-claro);
+    padding: 8px 90px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.483);
+    text-decoration: none;
+    /* Muda o ponteiro do mouse ao passar encima */
+    cursor: pointer;
+    margin-top: 55px;
+    border: none;
+}
+
+.botao-dialog:hover {
+    color: white;
+    background-color: var(--cor-vermelho);
+    text-decoration: none;
 }
 
 main {
@@ -162,10 +250,10 @@ main > div > p {
     margin: 25px 170px 25px 10px;
 }
 
-.alinhamento {
+.alinhamento-centro {
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: center;
 }
 
 #calculadora-imc {
@@ -183,7 +271,7 @@ main > div > p {
     margin-left: 10px;
 }
 
-.input-field {
+.input-field-calculadora {
     height: 50px;
     width: 215px;
     display: flex;
@@ -194,8 +282,8 @@ main > div > p {
     margin: 0px 10px 25px 10px;
 }
 
-.input-field i, 
-.input-field span {
+.input-field-calculadora i, 
+.input-field-calculadora span {
     font-size: 18px;
     padding: 20px;
 }
@@ -266,6 +354,12 @@ main > div > p {
     box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.483);
     /* Muda o ponteiro do mouse ao passar encima */
     cursor: pointer;
+}
+
+#botao-calcular-calculadora:hover {
+    color: var(--cor-azul-claro);
+    background-color: var(--cor-azul-claro-fundo);
+    text-decoration: none;
 }
 
 .hidden {
