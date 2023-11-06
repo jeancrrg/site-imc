@@ -56,7 +56,7 @@ header h1 {
     color: white;
     font-family: var(--fonte-titulo);
     font-size: 3em;
-    margin-left: 400px;
+    margin-left: 470px;
     margin-bottom: 10px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.548);
 }
@@ -89,25 +89,26 @@ main {
     background-color: white;
     min-width: 300px;
     max-width: 1500px;
-    padding-top: 25px;
-    padding-bottom: 40px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     margin: auto;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.483);
 }
 
-main h2 {
+main > div h2 {
     color: var(--cor-azul-escuro);
     font-size: 1.6em;
     font-weight: bold;
     text-indent: 30px;
-    padding: 25px 50px;
+    text-align: center;
+    padding: 15px 50px;
     text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.548);
     margin: 0px;
 }
 
 main h3 {
-    text-indent: 30px;
-    padding: 15px 50px;
+    font-size: 1.2em;
+    padding: 15px 35px;
     margin: 0px;
 }
 
@@ -121,87 +122,43 @@ main p {
     margin: 0px;
 }
 
-
 .faq {
-    width: 80%;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.pergunta {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    margin: 10px 0;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.pergunta h2 {
-    margin: 0;
-    font-size: 18px;
-}
-
-.resposta {
-    display: none;
-}
-
-.resposta p {
-    margin: 10px 0;
-}
-
-
-
-
-
-
-.conteiner-faq h3{
-    
-}
-
-.conteiner-faq p{
-    
-}
-
-.conteiner-faq,
-.user-guide {
     margin: 60px;
     padding: 20px;
     background-color: white;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
 
-.user-guide h3{
-    
+#duvidas {
+    max-width: 900px;
+    margin: auto;
 }
 
-.user-guide p{
-    
+.pergunta {
+    margin: 50px;
 }
 
-.faq-container {
-    width: 80%;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-.faq-question {
-    cursor: pointer;
+.pergunta button {
     display: flex;
+    /* Distribui os elementos horizontalmente */
+    justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
-  }
+}
 
-  .faq-arrow {
-    font-size: 1.5rem;
-    margin-right: 10px;
-  }
+.pergunta i {
+    font-size: 20px;
+    margin-right: 20px;
+}
 
-  .faq-answer {
-    display: none;
-    margin-left: 30px;
-    padding: 10px;
-    background-color: #f0f0f0;
-  }
+#guia-usuario h3 {
+    font-weight: bold;
+    text-decoration: underline;
+    margin: 15px 42px;
+}
+
+#guia-usuario li {
+    margin:20px 65px;
+}
 
 footer {
     color: white;
@@ -234,4 +191,6 @@ footer ul {
     /* Bolinha da lista pro lado de dentro */
     list-style-position: inside;
     columns: 2;
+    padding: 0px;
+    margin: 0px;
 }

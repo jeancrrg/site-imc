@@ -386,7 +386,7 @@ main > div > p {
     border-collapse: collapse;
     border-radius: 10px;
     border: 1px solid var(--cor-borda-tabela);
-    margin: 40px 77px;
+    margin: 40px 77px 40px -45px;
 }
 
 .tabela-classificacao-imc tr.cabecalho-tabela {
