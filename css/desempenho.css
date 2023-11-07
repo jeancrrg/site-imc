@@ -84,95 +84,14 @@ nav {
     background-color: var(--cor-azul-claro-fundo);
     text-decoration: none;
 }
-
-main {
-    background-color: white;
-    min-width: 300px;
-    max-width: 1500px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin: auto;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.483);
+#grafico{
+    width: 500px;
+    height: 500px;
 }
 
-main > div h2 {
-    color: var(--cor-azul-escuro);
-    font-size: 1.6em;
-    font-weight: bold;
-    text-indent: 30px;
-    text-align: center;
-    padding: 15px 50px;
-    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.548);
-    margin: 0px;
-}
-
-main h3 {
-    font-size: 1.2em;
-    padding: 15px 35px;
-    margin: 0px;
-}
-
-main p {
-    font-size: 1em;
-    text-indent: 30px;
-    text-align: justify;
-    /* Espaçamento entre linhas */
-    line-height: 2em;
-    padding: 5px 50px;
-    margin: 0px;
-}
-
-.faq {
-    margin: 60px;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-}
-
-#duvidas {
-    max-width: 900px;
-    margin: auto;
-}
-
-.pergunta {
-    margin: 50px;
-}
-
-.pergunta button {
-    display: flex;
-    /* Distribui os elementos horizontalmente */
-    justify-content: space-between;
-    align-items: center;
-}
-
-.pergunta i {
-    font-size: 20px;
-    margin-right: 20px;
-}
-
-#guia-usuario h3 {
-    font-weight: bold;
-    text-decoration: underline;
-    margin: 15px 42px;
-}
-
-#guia-usuario ul {
-    /* Emoji antes da lista (Emojipedia) (00A0 = espaço) */
-    list-style-type: '\1F537\00A0\00A0';
-}
-
-#guia-usuario li {
-    margin:20px 75px;
-}
-
-.alinhamento-centro {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-#imagem-guia-usuario {
-    margin-right: 100px;
+canvas{
+    width: 500px;
+    height: 500px;
 }
 
 footer {
@@ -206,6 +125,4 @@ footer ul {
     /* Bolinha da lista pro lado de dentro */
     list-style-position: inside;
     columns: 2;
-    padding: 0px;
-    margin: 0px;
 }
