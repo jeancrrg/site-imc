@@ -366,19 +366,28 @@ main > div > p {
     display: none;
 }
 
-#resultado-imc {
+#conteiner-resultados {
     color: white;
     background-color: var(--cor-cinza);
-    height: 200px;
+    height: 600px;
     padding: 50px;
     margin-bottom: 20px;
 }
 
-#resultado-imc h2 {
-    color: var(--cor-azul-claro);
-    font-family: var(--fonte-padrao);
-    font-size: 1.6em;
+#resultados {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+
+#resultados div {
+    height: 110px;
+    width: 240px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px 50px;
+}
+
 
 .tabela-classificacao-imc {
     width: 500px;
