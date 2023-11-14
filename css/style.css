@@ -374,6 +374,10 @@ main > div > p {
     margin-bottom: 20px;
 }
 
+#conteiner-resultados img {
+    height: 60px;
+}
+
 #resultados {
     display: flex;
     align-items: center;
@@ -386,6 +390,10 @@ main > div > p {
     background-color: white;
     border-radius: 10px;
     margin: 10px 50px;
+}
+
+#resultados p {
+    color: black;
 }
 
 
