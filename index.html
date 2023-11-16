@@ -24,7 +24,7 @@
 
         <div id="titulo">
             <h1> CALCULADORA DE IMC </h1>
-            <h3> Indicador de Massa Corporal </h3>
+            <h3> Índice de Massa Corporal </h3>
         </div>
 
         <button class="botao" onclick="abrirDialogLogin()"> 
@@ -140,9 +140,9 @@
                 O Índice de Massa Corporal (IMC) é uma das principais ferramentas, adotada inclusive pela <strong>Organização Mundial de Saúde (OMS)</strong>, para calcular o chamado “peso ideal”. Obtido a partir do peso e da altura do indivíduo, o IMC também aponta níveis de magreza e obesidade, que são usados para nortear o trabalho de profissionais de saúde e de educadores físicos.
             </p>
 
-            <h2> Como calcular o IMC </h2>
+            <h2> Como realizar seu cálculo </h2>
             <p>
-                Para obter o IMC, basta dividir o seu peso (em quilos) pela altura (em metros) elevada ao quadrado (altura x altura). De acordo com o indicador, o peso considerado saudável é aquele situado entre <strong>18,5 e 24,9</strong>.
+                Para calcular é um processo bem simples, basta dividir o seu peso (em quilos) pela altura (em metros) elevada ao quadrado (altura x altura). De acordo com o indicador, o peso considerado saudável é aquele situado entre <strong>18,5 e 24,9</strong>. O resultado obtido pode ser comparado com as faixas padrão para determinar a classificação do peso da pessoa.
             </p>
 
             <img id="imagem-calculo-imc" src="images/calculo-imc.png" alt="cálculo IMC">
@@ -150,20 +150,26 @@
 
         <div id="importancia-imc">
             <div id="texto-importancia-imc">
-                <h2> Importância do IMC </h2>
+                <div>
+                    <h2> Importância do IMC </h2>
+                </div>
         
-                <p>
-                    A classificação é uma ferramenta valiosa para identificar problemas de obesidade ou desnutrição em indivíduos de todas as faixas etárias, desde crianças e adolescentes até adultos e idosos.
-                </p>
-                <p>
-                    Além de calcular o valor do IMC, essa calculadora também fornece orientações sobre o intervalo de peso ideal para manter uma qualidade de vida saudável.
-                </p>
-                <p>
-                    Manter o peso dentro desse intervalo é crucial para prevenir o desenvolvimento de várias doenças crônicas, como diabetes, hipertensão e problemas cardíacos.
-                </p>
-                <p>
-                    <strong>Descubra agora o seu IMC e garanta uma melhor qualidade de vida!</strong>
-                </p>
+                <div>
+                    <p>
+                        A classificação do IMC é uma ferramenta valiosa para identificar problemas de obesidade ou desnutrição em indivíduos de todas as faixas etárias, desde crianças e adolescentes até adultos e idosos.
+                    </p>
+                    <p>
+                        Além de calcular o valor, essa calculadora também fornece orientações sobre o intervalo de peso ideal para manter uma qualidade de vida saudável.
+                    </p>
+                    <p>
+                        Manter o peso dentro desse intervalo é crucial para prevenir o desenvolvimento de várias doenças crônicas como diabetes, hipertensão e problemas cardíacos.
+                    </p>
+                </div>
+                <div id="descubra-seu-imc">
+                    <p>
+                        <strong>Descubra seu IMC e garanta uma melhor qualidade de vida!</strong>
+                    </p>
+                </div>
             </div>
 
             <div id="calculadora-imc">
@@ -226,54 +232,79 @@
 
             <div id="resultados">
 
-                <div id="resultado-imc">
-                    <img src="images/icone-saude.png" alt="Ícone de saúde">
-                    <p> Índice de Massa Corporal </p>
+                <div class="alinhamento-centro">
+                    <div>
+                        <i class="fa-solid fa-notes-medical"></i>
+                    </div>
+                    <div>
+                        <div class="tracinhos">
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <p> Índice de Massa Corporal </p>
+                    </div>
                 </div>
 
-
-                <div id="resultado-consumo-calorico">
-                    <img src="images/icone-consumo-calorico.png" alt="Ícone de consumo calórico">
-                    <p> Consumo Calórico Diário </p>
+                <div class="alinhamento-centro">
+                    <div>
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <div>
+                        <div class="tracinhos">
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <p> Frequência Cardíaca </p>
+                    </div>
                 </div>
 
-
-                <div id="resultado-frequencia-cardiaca">
-                    <img src="images/icone-frequencia-cardiaca.png" alt="Ícone de frequência cardíaca">
-                    <p> Frequência Cardíaca </p>
+                <div class="alinhamento-centro">
+                    <div>
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <div>
+                        <div class="tracinhos">
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <p> Consumo Calórico Diário </p>
+                    </div>
                 </div>
 
-
-                <div id="resultado-circunferencia-abdominal">
-                    <img src="images/icone-circunferencia-abdominal.png" alt="Ícone de circunferência abdominal">
-                    <p> Circunferência Abdominal </p>
+                <div class="alinhamento-centro">
+                    <div>
+                        <i class="fa-solid fa-tape"></i>
+                    </div>
+                    <div>    
+                        <div class="tracinhos">
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <p> Circunferência Abdominal </p>
+                    </div>
                 </div>
 
             </div>
 
             <div id="infos">
 
+                
 
 
 
             </div>
-
-
             
         </div>
 
         <div>
             <h2> Entenda seu resultado </h2>
+
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse maiores repellendus suscipit voluptates obcaecati. Laudantium voluptatum vel molestias dolorem nulla laborum nostrum neque, doloremque numquam blanditiis aperiam in, quas veritatis.
+                Compreender seu resultado é crucial para ter uma visão inicial do seu estado nutricional. Ao obter seu resultado a partir da calculadora, deve-se interpretar o valor baseando-se na tabela abaixo, que são as devidas classificações. Entender essas categorias ajuda a identificar se é necessário realizar mudanças no estilo de vida para alcançar e manter um peso saudável.
             </p>
 
             <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi quisquam tempora, doloribus officiis amet in consequuntur impedit magnam placeat quod corporis cupiditate ipsam voluptates. Eveniet, nisi. Sit deserunt modi sed.
-            </p>
-
-            <p>
-                Medidas de risco da circunferência abdominal Homem: 94cm Mulheres: 80cm.
+                Para uma avaliação mais abrangente, além do IMC, é fundamental considerar as <strong>medidas de risco da circunferência abdominal</strong>. Homens com uma circunferência acima de <strong>94cm</strong> e mulheres com mais de <strong>80cm</strong> podem apresentar um risco elevado à saúde. Essa medida adicional pode fornecer informações valiosas sobre a distribuição de gordura corporal.
             </p>
         </div>
 
@@ -327,16 +358,60 @@
             <h2> O que fazer para melhorar o IMC? </h2>
 
             <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis ipsum quidem reprehenderit repudiandae suscipit possimus minus corrupti voluptatum laboriosam maxime laudantium, eius porro, nulla est vitae. Quae hic sint suscipit.
+                Aprimorar seu resultado requer uma abordagem personalizada e bem orientada, é fundamental incorporar uma <strong>dieta balanceada e nutritiva</strong>, combinada com <strong>atividade física regular</strong>. É aconselhável consultar um profissional de saúde, pois os nutricionistas são profissionais especializados que podem oferecer orientações personalizadas, levando em consideração suas preferências alimentares, necessidades nutricionais e metas de saúde.
             </p>
 
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At rerum ad asperiores nemo iste corporis aliquam dolores earum doloribus quisquam laborum, sit optio delectus unde architecto incidunt voluptatibus inventore doloremque.
+                Mudanças graduais e sustentáveis são mais eficazes a longo prazo do que soluções rápidas. É importante lembrar que a saúde é um processo contínuo, e pequenas melhorias acumuladas ao longo do tempo podem fazer uma grande diferença.
             </p>
+        </div>
+
+        <div id="dicas-melhorar-imc">
+            
+            <h2> 5 Dicas para controlar seu resultado</h2>
 
             <p>
-                Sempre que possível, o resultado de IMC deve ser interpretado por um nutricionista, que irá adequar a dieta de acordo com os objetivos de cada pessoa e seu histórico de saúde.
+                Compreender o IMC é um primeiro passo importante para manter uma boa saúde, mas controlar o seu IMC é o que realmente importa. Aqui estão algumas <strong>dicas práticas</strong> para ajudar a manter seu IMC dentro de uma faixa saudável.
             </p>
+           
+            <div>
+                <div class="alinhamento-centro">
+                    <i class="fa-solid fa-dumbbell"></i>
+                    <p>
+                        Exercício regular:  O exercício é fundamental para manter um IMC saudável. O Centro de Controle e Prevenção de Doenças (CDC) recomenda pelo menos 150 minutos de atividade física moderada ou 75 minutos de atividade física intensa por semana para adultos saudáveis. Além disso, exercícios de força para ajudar a construir músculos e aumentar o metabolismo também são recomendados;
+                    </p>
+                </div>
+                <div class="alinhamento-centro">
+                    <i class="fa-solid fa-apple-whole"></i>
+                    <p>
+                        Dieta equilibrada:  O que você come tem um grande impacto no seu IMC. Manter uma dieta equilibrada que inclua frutas, legumes, grãos integrais, proteínas magras e gorduras saudáveis é fundamental. Evite alimentos processados e açúcares adicionados e preste atenção às porções. Comer em excesso pode facilmente levar a um aumento do IMC;
+                    </p>
+                </div>
+                <div class="alinhamento-centro">
+                    <i class="fa-solid fa-bed"></i>
+                    <p>
+                        Durma o suficiente:  A falta de sono pode afetar negativamente a capacidade do corpo de regular o açúcar no sangue e o apetite, o que pode levar a um aumento do IMC. Adultos devem tentar dormir pelo menos 7 horas por noite para manter um IMC saudável;
+                    </p>
+                </div>
+                <div class="alinhamento-centro">
+                    <i class="fa-solid fa-dove"></i>
+                    <p>
+                        Gerencie o estresse:  O estresse crônico pode levar ao aumento da produção de cortisol, um hormônio que está associado ao aumento da gordura abdominal e ao aumento do IMC. Encontre maneiras de gerenciar o estresse, como meditação, exercícios de respiração, ioga ou terapia;
+                    </p>
+                </div>
+                <div class="alinhamento-centro">
+                    <p>
+                        Monitore o seu IMC regularmente:  É importante monitorar seu IMC regularmente para garantir que ele permaneça dentro de uma faixa saudável. Use uma calculadora de IMC online para calcular seu IMC e verifique-o a cada poucos meses para garantir que você esteja no caminho certo.
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <p>
+                    Ao seguir essas dicas práticas, você pode <strong>controlar seu IMC e manter uma boa saúde.</strong> Lembre-se de que manter um IMC saudável é um esforço contínuo e requer comprometimento e disciplina, mas os benefícios para a saúde valem a pena.
+                </p>
+            </div>
+            
         </div>
     </main>
 

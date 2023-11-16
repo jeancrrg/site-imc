@@ -18,6 +18,7 @@
     --cor-azul-bem-claro: #b2e4f1;
     --cor-rosa-claro: #f181ef96;
     --cor-rosa-escuro: #f109ec;
+    --cor-cinza-claro: #d3d3d39c;
     
     --fonte-titulo: 'Times New Roman', 'Times, serif';
     --fonte-padrao: 'Rubik', 'Arial, Verdana', 'Helvetica', 'sans-serif';
@@ -184,7 +185,7 @@ main {
     min-width: 300px;
     max-width: 1500px;
     padding-top: 25px;
-    padding-bottom: 40px;
+    padding-bottom: 60px;
     margin: auto;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.483);
 }
@@ -232,7 +233,7 @@ main > div > p {
     width: 830px;
 }
 
-#texto-importancia-imc > h2 {
+#texto-importancia-imc h2 {
     color: white;
     font-family: var(--fonte-titulo);
     font-size: 1.8em;
@@ -241,13 +242,17 @@ main > div > p {
     text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.548);
 }
 
-#texto-importancia-imc > p {
+#texto-importancia-imc p {
     font-size: 1.1em;
     font-family: var(--fonte-padrao);
     text-align: justify;
     text-indent: 30px;
     line-height: 2em;
     margin: 25px 170px 25px 10px;
+}
+
+#descubra-seu-imc {
+    font-size: 1.1em;
 }
 
 .alinhamento-centro {
@@ -369,9 +374,22 @@ main > div > p {
 #conteiner-resultados {
     color: white;
     background-color: var(--cor-cinza);
-    height: 600px;
-    padding: 50px;
-    margin-bottom: 20px;
+    height: 265px;
+    padding: 25px 50px;
+    margin-bottom: 25px;
+}
+
+#conteiner-resultados > h2 {
+    color: var(--cor-azul-claro);
+    font-size: 1.6em;
+    font-weight: bold;
+    padding: 0px;
+    margin-left: 30px;
+}
+
+#conteiner-resultados > p {
+    padding: 0px;
+    margin: 15px 0px 25px 30px;
 }
 
 #conteiner-resultados img {
@@ -381,21 +399,37 @@ main > div > p {
 #resultados {
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
-#resultados div {
-    height: 110px;
-    width: 240px;
+#resultados > div {
+    height: 95px;
+    width: 233px;
     background-color: white;
     border-radius: 10px;
-    margin: 10px 50px;
+    margin: 0px 60px;
 }
 
 #resultados p {
-    color: black;
+    color: var(--cor-cinza-claro);
 }
 
+#resultados i {
+    color: var(--cor-cinza-claro);
+    font-size: 45px;
+    margin: 20px;
+}
+
+.tracinhos {
+    display: flex;
+    margin: 30px 0px 15px 0px;
+}
+
+.tracinhos span {
+    width: 12px;
+    height: 3px;
+    background-color: var(--cor-cinza-claro);
+    margin: 0px 3px;
+}
 
 .tabela-classificacao-imc {
     width: 500px;
@@ -418,6 +452,14 @@ main > div > p {
     padding: 10px;
 }
 
+#dicas-melhorar-imc p {
+    margin:20px 75px;
+}
+
+#dicas-melhorar-imc i {
+    font-size: 30px;
+}
+
 footer {
     color: white;
     background-color: var(--cor-azul-escuro);
@@ -425,7 +467,7 @@ footer {
     align-items: center;
     /* Distribui os elementos horizontalmente */
     justify-content: space-between;
-    height: 170px;
+    height: 200px;
 }
 
 footer h2 {
