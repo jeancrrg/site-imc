@@ -230,13 +230,17 @@
             <h2> Resultado </h2>
             <p> Seu resultado aparecerá logo abaixo: </p>
 
-            <div id="resultados">
+            <div id="cards-resultados">
 
                 <div class="alinhamento-centro">
                     <div>
                         <i class="fa-solid fa-notes-medical"></i>
                     </div>
                     <div>
+                        <div id="resultado-imc" class="hidden">
+                            <span id="valor-imc"></span>
+                        </div>
+
                         <div class="tracinhos">
                             <span></span>
                             <span></span>
@@ -366,51 +370,69 @@
             </p>
         </div>
 
-        <div id="dicas-melhorar-imc">
-            
+        <div>
             <h2> 5 Dicas para controlar seu resultado</h2>
 
             <p>
-                Compreender o IMC é um primeiro passo importante para manter uma boa saúde, mas controlar o seu IMC é o que realmente importa. Aqui estão algumas <strong>dicas práticas</strong> para ajudar a manter seu IMC dentro de uma faixa saudável.
+                Compreender o IMC é um primeiro passo importante para manter uma boa saúde, mas controlar o seu IMC é o que realmente importa. Aqui estão algumas <strong>dicas práticas</strong> para te ajudar a manter-se dentro de uma faixa saudável.
             </p>
            
-            <div>
+            <div id="dicas">
                 <div class="alinhamento-centro">
-                    <i class="fa-solid fa-dumbbell"></i>
-                    <p>
-                        Exercício regular:  O exercício é fundamental para manter um IMC saudável. O Centro de Controle e Prevenção de Doenças (CDC) recomenda pelo menos 150 minutos de atividade física moderada ou 75 minutos de atividade física intensa por semana para adultos saudáveis. Além disso, exercícios de força para ajudar a construir músculos e aumentar o metabolismo também são recomendados;
-                    </p>
+                    <div class="cards-dicas">
+                        <div class="alinhamento-centro">
+                            <i class="fa-solid fa-dumbbell"></i>
+                            <h3> Exercício regular </h3>
+                        </div>
+                        <p>
+                            O exercício é fundamental para manter uma vida saudável. O Centro de Controle e Prevenção de Doenças (CDC) recomenda pelo menos 150 minutos de atividade física moderada ou 75 minutos de atividade intensa por semana para adultos saudáveis.
+                        </p>
+                    </div>
+                    <div class="cards-dicas">
+                        <div class="alinhamento-centro">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <h3> Monitore regularmente </h3>
+                        </div>
+                        <p>
+                            É importante monitorar seu IMC regularmente para garantir que ele permaneça dentro de uma faixa saudável. Use a calculadora acima para calcular seu IMC e verifique-o a cada poucos meses para garantir que você esteja no caminho certo.
+                        </p>  
+                    </div>
+                    <div class="cards-dicas">
+                        <div class="alinhamento-centro">
+                            <i class="fa-solid fa-apple-whole"></i>
+                            <h3> Dieta Equilibrada </h3>
+                        </div>
+                        <p>
+                            O que você come tem um grande impacto no seu IMC. Manter uma dieta equilibrada que inclua frutas, legumes, grãos integrais, proteínas magras e gorduras saudáveis é fundamental. Evite alimentos processados e açúcares adicionados e preste atenção às porções.
+                        </p>
+                    </div>
                 </div>
-                <div class="alinhamento-centro">
-                    <i class="fa-solid fa-apple-whole"></i>
-                    <p>
-                        Dieta equilibrada:  O que você come tem um grande impacto no seu IMC. Manter uma dieta equilibrada que inclua frutas, legumes, grãos integrais, proteínas magras e gorduras saudáveis é fundamental. Evite alimentos processados e açúcares adicionados e preste atenção às porções. Comer em excesso pode facilmente levar a um aumento do IMC;
-                    </p>
-                </div>
-                <div class="alinhamento-centro">
-                    <i class="fa-solid fa-bed"></i>
-                    <p>
-                        Durma o suficiente:  A falta de sono pode afetar negativamente a capacidade do corpo de regular o açúcar no sangue e o apetite, o que pode levar a um aumento do IMC. Adultos devem tentar dormir pelo menos 7 horas por noite para manter um IMC saudável;
-                    </p>
-                </div>
-                <div class="alinhamento-centro">
-                    <i class="fa-solid fa-dove"></i>
-                    <p>
-                        Gerencie o estresse:  O estresse crônico pode levar ao aumento da produção de cortisol, um hormônio que está associado ao aumento da gordura abdominal e ao aumento do IMC. Encontre maneiras de gerenciar o estresse, como meditação, exercícios de respiração, ioga ou terapia;
-                    </p>
-                </div>
-                <div class="alinhamento-centro">
-                    <p>
-                        Monitore o seu IMC regularmente:  É importante monitorar seu IMC regularmente para garantir que ele permaneça dentro de uma faixa saudável. Use uma calculadora de IMC online para calcular seu IMC e verifique-o a cada poucos meses para garantir que você esteja no caminho certo.
-                    </p>
-                </div>
-            </div>
 
-            <div>
-                <p>
-                    Ao seguir essas dicas práticas, você pode <strong>controlar seu IMC e manter uma boa saúde.</strong> Lembre-se de que manter um IMC saudável é um esforço contínuo e requer comprometimento e disciplina, mas os benefícios para a saúde valem a pena.
-                </p>
+                <div class="alinhamento-centro">
+                    <div class="cards-dicas">
+                        <div class="alinhamento-centro">
+                            <i class="fa-solid fa-bed"></i>
+                            <h3> Durma bem </h3>
+                        </div>
+                        <p>
+                            A falta de sono pode afetar negativamente a capacidade do corpo de regular o açúcar no sangue e o apetite, o que pode levar a um aumento do IMC. Adultos devem tentar dormir pelo menos 7 horas por noite para manter um IMC saudável.
+                        </p>
+                    </div>
+                    <div class="cards-dicas">
+                        <div class="alinhamento-centro">
+                            <i class="fa-solid fa-dove"></i>
+                            <h3> Gerencie o estresse </h3>
+                        </div>
+                        <p>
+                            O estresse crônico pode levar ao aumento da produção de cortisol, um hormônio que está associado ao aumento da gordura abdominal e ao aumento do IMC. Encontre maneiras de gerenciar o estresse, como meditação, exercícios de respiração, ioga ou terapia.
+                        </p>
+                    </div>
+                </div>
             </div>
+            
+            <p>
+                Ao seguir essas dicas práticas, você pode <strong>controlar seu IMC e manter uma boa saúde.</strong> Lembre-se de que manter um IMC saudável é um esforço contínuo e requer comprometimento e disciplina, mas os benefícios para a saúde valem a pena.
+            </p>
             
         </div>
     </main>

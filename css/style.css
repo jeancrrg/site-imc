@@ -396,12 +396,12 @@ main > div > p {
     height: 60px;
 }
 
-#resultados {
+#cards-resultados {
     display: flex;
     align-items: center;
 }
 
-#resultados > div {
+#cards-resultados > div {
     height: 95px;
     width: 233px;
     background-color: white;
@@ -409,14 +409,20 @@ main > div > p {
     margin: 0px 60px;
 }
 
-#resultados p {
+#cards-resultados p {
     color: var(--cor-cinza-claro);
 }
 
-#resultados i {
+#cards-resultados i {
     color: var(--cor-cinza-claro);
     font-size: 45px;
     margin: 20px;
+}
+
+#valor-imc {
+    font-size: 30px;
+    margin-top: 10px;
+    color: black;
 }
 
 .tracinhos {
@@ -429,6 +435,18 @@ main > div > p {
     height: 3px;
     background-color: var(--cor-cinza-claro);
     margin: 0px 3px;
+}
+
+.normal {
+    color: green;
+}
+
+.atencao {
+    color: yellow;
+}
+
+.perigo {
+    color: red;
 }
 
 .tabela-classificacao-imc {
@@ -452,12 +470,38 @@ main > div > p {
     padding: 10px;
 }
 
-#dicas-melhorar-imc p {
-    margin:20px 75px;
+#dicas {
+    margin: 20px 0px;
 }
 
-#dicas-melhorar-imc i {
-    font-size: 30px;
+.cards-dicas {
+    background-color: var(--cor-azul-claro-fundo);
+    height: 230px;
+    width: 420px;
+    margin: 35px;
+    border-radius: 10px;
+    border: 2px solid var(--cor-azul-claro);
+}
+
+.cards-dicas > div > i {
+    font-size: 35px;
+    color: var(--cor-azul-claro);
+    margin: 10px;
+}
+
+.cards-dicas > div > h3 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-azul-claro);
+    font-size: 1.6em;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.cards-dicas > p {
+    font-size: 1em;
+    text-indent: 30px;
+    text-align: justify;
+    margin: 10px 25px 25px 25px;
 }
 
 footer {
