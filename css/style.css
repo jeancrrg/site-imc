@@ -19,6 +19,12 @@
     --cor-rosa-claro: #f181ef96;
     --cor-rosa-escuro: #f109ec;
     --cor-cinza-claro: #d3d3d39c;
+    --cor-verde: #09ca02;
+    --cor-amarelo: #ebca03;
+    --cor-vermelho-escuro: #de0000;
+    --cor-azul: #0000d0;
+    --cor-vermelho-claro: #ed566c;
+    --cor-verde-agua: #0D9492;
     
     --fonte-titulo: 'Times New Roman', 'Times, serif';
     --fonte-padrao: 'Rubik', 'Arial, Verdana', 'Helvetica', 'sans-serif';
@@ -371,15 +377,14 @@ main > div > p {
     display: none;
 }
 
-#conteiner-resultados {
+#container-resultados {
     color: white;
     background-color: var(--cor-cinza);
     height: 265px;
-    padding: 25px 50px;
-    margin-bottom: 25px;
+    padding: 25px 50px 0px 50px;
 }
 
-#conteiner-resultados > h2 {
+#container-resultados > h2 {
     color: var(--cor-azul-claro);
     font-size: 1.6em;
     font-weight: bold;
@@ -387,13 +392,9 @@ main > div > p {
     margin-left: 30px;
 }
 
-#conteiner-resultados > p {
+#container-resultados > p {
     padding: 0px;
     margin: 15px 0px 25px 30px;
-}
-
-#conteiner-resultados img {
-    height: 60px;
 }
 
 #cards-resultados {
@@ -401,7 +402,7 @@ main > div > p {
     align-items: center;
 }
 
-#cards-resultados > div {
+#cards-resultados > div > div {
     height: 95px;
     width: 233px;
     background-color: white;
@@ -409,20 +410,9 @@ main > div > p {
     margin: 0px 60px;
 }
 
-#cards-resultados p {
-    color: var(--cor-cinza-claro);
-}
-
 #cards-resultados i {
-    color: var(--cor-cinza-claro);
     font-size: 45px;
     margin: 20px;
-}
-
-#valor-imc {
-    font-size: 30px;
-    margin-top: 10px;
-    color: black;
 }
 
 .tracinhos {
@@ -437,16 +427,232 @@ main > div > p {
     margin: 0px 3px;
 }
 
-.normal {
-    color: green;
+.alinhamento-esquerda {
+    display: flex;
+    align-items: center;
+}
+
+#imc span {
+    font-size: 35px;
+    margin: 12px 10px 0px 0px;
+}
+
+#imc p {
+    font-size: 20px;
+    margin: 20px 0px 0px 0px;
+}
+
+#frequencia-cardiaca span {
+    font-size: 35px;
+    margin: 12px 10px 0px 0px;
+}
+
+#frequencia-cardiaca p {
+    font-size: 20px;
+    margin: 20px 0px 0px 0px;
+}
+
+#consumo-calorico span {
+    font-size: 35px;
+    margin: 12px 10px 0px 0px;
+}
+
+#consumo-calorico p {
+    font-size: 20px;
+    margin: 20px 0px 0px 0px;
+}
+
+#circunferencia-abdominal span {
+    font-size: 35px;
+    margin: 12px 10px 0px 0px;
+}
+
+#circunferencia-abdominal p {
+    font-size: 20px;
+    margin: 20px 0px 0px 0px;
+}
+
+.cor-padrao {
+    color: var(--cor-cinza-claro);
+}
+
+.ideal {
+    color: var(--cor-azul-claro);
+}
+
+.desejavel {
+    color: var(--cor-verde);
 }
 
 .atencao {
-    color: yellow;
+    color: var(--cor-amarelo);
 }
 
 .perigo {
-    color: red;
+    color: var(--cor-vermelho-escuro);
+}
+
+#container-infos-resultados {
+    color: white;
+    background-color: var(--cor-cinza);
+    height: 395px;
+    padding-top: 20px;
+    margin-bottom: 25px;
+}
+
+#informacao-imc {
+    background-color: white;
+    height: 320px;
+    width: 695px;
+    margin: 0px 50px 30px 60px;
+    border-radius: 10px;
+}
+
+#informacao-circunferencia-abdominal {
+    background-color: white;
+    height: 320px;
+    width: 500px;
+    margin: 0px 50px 30px 50px;
+    border-radius: 10px;
+}
+
+#grafico-informacao-imc {
+    padding-top: 25px;
+}
+
+#grafico-informacao-imc > div {
+    height: 20px;
+    width: 100px;
+}
+
+#canto-esquerdo-grafico {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.background-abaixo-peso {
+    background-color: var(--cor-verde-agua);
+}
+
+.background-desejavel {
+    background-color: var(--cor-verde);
+}
+
+.background-sobrepeso {
+    background-color: var(--cor-amarelo);
+}
+
+.background-obesidade-1 {
+    background-color: orange;
+}
+
+.background-obesidade-2 {
+    background-color: var(--cor-vermelho-claro);
+}
+
+.background-obesidade-3 {
+    background-color: var(--cor-vermelho-escuro);
+}
+
+#canto-direito-grafico {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#sigla-grafico {
+    border-bottom: 1px solid #ddd;
+}
+
+#sigla-grafico > div {
+    font-size: 17px;
+    height: 25px;
+    margin: 7px 40px;
+}
+
+.sigla-abaixo-peso {
+    color: var(--cor-verde-agua);
+}
+
+.sigla-desejavel {
+    color: var(--cor-verde);
+}
+
+.sigla-sobrepeso {
+    color: var(--cor-amarelo);
+}
+
+.sigla-obesidade-1 {
+    color: orange;
+}
+
+.sigla-obesidade-2 {
+    color: var(--cor-vermelho-claro);
+}
+
+.sigla-obesidade-3 {
+    color: var(--cor-vermelho-escuro);
+}
+
+#descricao-grafico-informacao-imc {
+    margin-top: 25px;
+}
+
+#descricao-grafico-informacao-imc h3 {
+    font-size: 20px;
+    margin: 0px 0px 0px 80px;
+}
+
+#descricao-grafico-informacao-imc p {
+    color: black;
+    font-size: 17px;
+    margin: 3px 3px 3px 30px;
+}
+
+#relatorio-imc {
+    color: white;
+    font-size: 18px;
+    height: 135px;
+    width: 260px;
+    padding: 40px 20px;
+    margin: 50px 82px;
+    border-radius: 10px;
+}
+
+#informacao-circunferencia-abdominal {
+    color: black;
+    padding: 20px;
+    text-indent: 20px;
+}
+
+#medida-risco-circunferencia {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+#medidas-risco {
+    height: 45px;
+    margin-left: 20px;
+}
+
+#medidas-risco i {
+    font-size: 55px;
+}
+
+#medidas-risco span {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#medidas-risco p {
+    margin: 0px;
+}
+
+#homens {
+    color: var(--cor-azul-claro);
+}
+
+#mulheres {
+    color: var(--cor-rosa-escuro);
 }
 
 .tabela-classificacao-imc {

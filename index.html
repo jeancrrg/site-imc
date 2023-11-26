@@ -42,13 +42,6 @@
     </header>
 
     <nav>
-        <a href="desempenho.html" class="botao" >
-            <span>
-                Desempenho
-                <i class="fa-solid fa-chart-line"></i>
-            </span>
-        </a>
-        
         <a href="ajuda.html" class="botao"> 
             <span>
                 Ajuda
@@ -178,12 +171,12 @@
                     <div>
                         <label for="sexo" class="label-calculadora"> Sexo: </label>
                         <div class="alinhamento-centro">
-                            <button id="botao-masculino-calculadora" onclick="selecionarMasculino()">
+                            <button id="botao-masculino-calculadora" onclick="selecionarMasculino(event)">
                                 <i class="fa-solid fa-mars"></i>
                                 <span> Masculino </span>
                             </button>
                             
-                            <button id="botao-feminino-calculadora" onclick="selecionarFeminino()">
+                            <button id="botao-feminino-calculadora" onclick="selecionarFeminino(event)">
                                 <i class="fa-solid fa-venus"></i>
                                 <span> Feminino </span>                            
                             </button>
@@ -220,84 +213,264 @@
                         </div>
                     </div>
 
-                    <button id="botao-calcular-calculadora" onclick="calcularImc(event)"> CALCULAR </button>
+                    <button id="botao-calcular-calculadora" onclick="calcular(event)"> CALCULAR </button>
                 </form>
             </div>
         </div>
 
-        <div id="conteiner-resultados">
-
+        <div id="container-resultados">
             <h2> Resultado </h2>
             <p> Seu resultado aparecerá logo abaixo: </p>
 
             <div id="cards-resultados">
-
-                <div class="alinhamento-centro">
-                    <div>
+                <div id="card-imc" class="cor-padrao">
+                    <div class="alinhamento-centro">
                         <i class="fa-solid fa-notes-medical"></i>
-                    </div>
-                    <div>
-                        <div id="resultado-imc" class="hidden">
-                            <span id="valor-imc"></span>
-                        </div>
+                        <div>
+                            <div id="imc" class="hidden">
+                                <div class="alinhamento-esquerda">
+                                    <span id="resultado-imc"></span>
+                                    <p>kg</p>
+                                </div>
+                            </div>
 
-                        <div class="tracinhos">
-                            <span></span>
-                            <span></span>
+                            <div id="tracinhos-imc" class="tracinhos">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <p> Índice de Massa Corporal </p>
                         </div>
-                        <p> Índice de Massa Corporal </p>
                     </div>
                 </div>
 
-                <div class="alinhamento-centro">
-                    <div>
+                <div id="card-frequencia-cardiaca" class="cor-padrao">
+                    <div class="alinhamento-centro">
                         <i class="fa-solid fa-heart-pulse"></i>
-                    </div>
-                    <div>
-                        <div class="tracinhos">
-                            <span></span>
-                            <span></span>
+                        <div>
+                            <div id="frequencia-cardiaca" class="hidden">
+                                <div class="alinhamento-esquerda">
+                                    <span id="resultado-frequencia-cardiaca"></span>
+                                    <p>bpm</p>
+                                </div>
+                            </div>
+    
+                            <div id="tracinhos-frequencia-cardiaca" class="tracinhos">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <p> Frequência Cardíaca Máxima </p>
                         </div>
-                        <p> Frequência Cardíaca </p>
                     </div>
                 </div>
 
-                <div class="alinhamento-centro">
-                    <div>
+                <div id="card-consumo-calorico" class="cor-padrao">
+                    <div class="alinhamento-centro">
                         <i class="fa-solid fa-utensils"></i>
-                    </div>
-                    <div>
-                        <div class="tracinhos">
-                            <span></span>
-                            <span></span>
+                        <div>
+                            <div id="consumo-calorico" class="hidden">
+                                <div class="alinhamento-esquerda">
+                                    <span id="resultado-consumo-calorico"></span>
+                                    <p>kcal</p>
+                                </div>
+                            </div>
+
+                            <div id="tracinhos-consumo-calorico" class="tracinhos">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <p> Consumo Calórico Diário </p>
                         </div>
-                        <p> Consumo Calórico Diário </p>
                     </div>
                 </div>
 
-                <div class="alinhamento-centro">
-                    <div>
+                <div id="card-circunferencia-abdominal" class="cor-padrao">
+                    <div class="alinhamento-centro">
                         <i class="fa-solid fa-tape"></i>
-                    </div>
-                    <div>    
-                        <div class="tracinhos">
-                            <span></span>
-                            <span></span>
+                        <div>   
+                            <div id="circunferencia-abdominal" class="hidden">
+                                <div class="alinhamento-esquerda">
+                                    <span id="resultado-circunferencia-abdominal"></span>
+                                    <p>cm</p>
+                                </div>
+                            </div>
+                            
+                            <div id="tracinhos-circunferencia-abdominal" class="tracinhos">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <p> Circunferência Abdominal Máxima </p>
                         </div>
-                        <p> Circunferência Abdominal </p>
                     </div>
                 </div>
-
             </div>
+        </div>
 
-            <div id="infos">
+        <div id="container-infos-resultados" class="hidden">
 
-                
+            <div class="alinhamento-centro">
+                <div id="informacao-imc">
 
-
-
-            </div>
+                    <div>
+                        <div id="grafico-informacao-imc" class="alinhamento-centro">
+                            <div id="canto-esquerdo-grafico" class="background-abaixo-peso">
+                                <span></span>
+                            </div>
             
+                            <div class="background-desejavel">
+                                <span></span>
+                            </div>
+            
+                            <div class="background-sobrepeso">
+                                <span></span>
+                            </div>
+            
+                            <div class="background-obesidade-1">
+                                <span></span>
+                            </div>
+            
+                            <div class="background-obesidade-2">
+                                <span></span>
+                            </div>
+            
+                            <div id="canto-direito-grafico" class="background-obesidade-3">
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <div id="sigla-grafico" class="alinhamento-centro">
+                            <div class="sigla-abaixo-peso">
+                                <p>A1</p>
+                            </div>
+                            <div class="sigla-desejavel">
+                                <p>D1</p>
+                            </div>
+                            <div class="sigla-sobrepeso">
+                                <p>S1</p>
+                            </div>
+                            <div class="sigla-obesidade-1">
+                                <p>O1</p>
+                            </div>
+                            <div class="sigla-obesidade-2">
+                                <p>O2</p>
+                            </div>
+                            <div class="sigla-obesidade-3">
+                                <p>O3</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="descricao-informacao-imc" class="alinhamento-dialog">
+
+                        <div id="descricao-grafico-informacao-imc">
+
+                            <div class="alinhamento-esquerda">
+                                <div class="sigla-abaixo-peso">
+                                    <h3>A1 |</h3>
+                                </div>
+                                <div>
+                                    <p>Abaixo do peso</p>
+                                </div>
+                            </div>
+
+                            <div class="alinhamento-esquerda">
+                                <div class="sigla-desejavel">
+                                    <h3>D1 |</h3>
+                                </div>
+                                <div>
+                                    <p>Peso Desejável</p>
+                                </div>
+                            </div>
+
+                            <div class="alinhamento-esquerda">
+                                <div class="sigla-sobrepeso">
+                                    <h3>S1 |</h3>
+                                </div>
+                                <div>
+                                    <p>Sobrepeso</p>
+                                </div>
+                            </div>
+                            
+                            <div class="alinhamento-esquerda">
+                                <div class="sigla-obesidade-1">
+                                    <h3>O1 |</h3>
+                                </div>
+                                <div>
+                                    <p>Obesidade 1</p>
+                                </div>
+                            </div>
+
+                            <div class="alinhamento-esquerda">
+                                <div class="sigla-obesidade-2">
+                                    <h3>O2 |</h3>
+                                </div>
+                                <div>
+                                    <p>Obesidade 2</p>
+                                </div>
+                            </div>
+                            
+                            <div class="alinhamento-esquerda">
+                                <div class="sigla-obesidade-3">
+                                    <h3>O3 |</h3>
+                                </div>
+                                <div>
+                                    <p>Obesidade 3</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                        <div id="relatorio-imc">
+                            <span id="descricao-resultado-imc"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div id="informacao-circunferencia-abdominal">
+                    <div>
+                        <p>
+                            Quando a gordura se acumula entre os órgãos no abdômen e aumenta a barriga, sempre merece ser combatido.  
+                        </p>
+                        <p>
+                            Segundo a <strong>Organização Mundial da Saúde(OMS)</strong>, medidas iguais ou superiores a 94 cm em homens e 80 cm em mulheres já aumentam significativamente o risco, especialmente para doenças cardíacas.
+                        </p>
+                    </div>  
+
+                    <div id="medida-risco-circunferencia">
+                        <div>
+                            <p> Medidas de risco da circunferência abdominal: </p>
+                        </div>
+
+
+                        <div id="medidas-risco" class="alinhamento-esquerda">
+                            <div id="homens" class="alinhamento-centro">
+                                <div>
+                                    <i class="fa-solid fa-mars"></i>
+                                </div>
+
+                                <div>
+                                    <span> 94 cm </span>
+                                    <p> homens </p>
+                                </div>
+                            </div>
+
+                            <div id="mulheres" class="alinhamento-centro">
+                                <div>
+                                    <i class="fa-solid fa-venus"></i>
+                                </div>
+
+                                <div>
+                                    <span> 80 cm </span>
+                                    <p> mulheres </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
         </div>
 
         <div>
@@ -326,7 +499,7 @@
                 
                 <tr class="linha-azul">
                     <td> Menor que 18,5 </td>
-                    <td> Abaixo do normal </td>
+                    <td> Abaixo do peso </td>
                 </tr>
 
                 <tr>

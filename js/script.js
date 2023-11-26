@@ -1,7 +1,4 @@
-let indicadorMasculino = false;
-let indicadorFeminino = false;
-
-function calcularImc(event) {
+function calcular(event) {
     // Impede o carregamento da página ao enviar
     event.preventDefault();
 
@@ -11,57 +8,130 @@ function calcularImc(event) {
 
     if (this.indicadorMasculino == undefined && this.indicadorFeminino == undefined) {
         alert('Selecione o sexo masculino ou feminino!');
+        return;
     }
-
     if (idade <= 0 || idade >= 110) {
         alert('Idade inválida, verifique!');
+        return;
     }
-
-    if (peso <= 0 || peso > 200) {
-        alert('Peso inválido, verifique!');
-    }
-
     if (altura <= 0 || altura > 2.50) {
         alert('Altura inválida, verifique!');
+        return;
     }
+    if (peso <= 0 || peso > 200) {
+        alert('Peso inválido, verifique!');
+        return;
+    }   
 
-    // ToFixed -> Aparece 2 casas depois da vírgula
-    const valorImc = (peso / (altura * altura)).toFixed(2);
+    // Pega os cards
+    const cardImc = document.getElementById('card-imc');
+    const cardFrequenciaCardiaca = document.getElementById('card-frequencia-cardiaca');
+    const cardConsumoCalorico = document.getElementById('card-consumo-calorico');
+    const cardCircunferenciaAbdominal = document.getElementById('card-circunferencia-abdominal');
+    const relatorioImc = document.getElementById('relatorio-imc');
 
-    const resultadoImc = document.getElementById('valor-imc');
-    let descricaoResultado = '';
+    // Retira os tracinhos
+    document.getElementById('tracinhos-imc').classList.remove('tracinhos');
+    document.getElementById('tracinhos-frequencia-cardiaca').classList.remove('tracinhos');
+    document.getElementById('tracinhos-consumo-calorico').classList.remove('tracinhos');
+    document.getElementById('tracinhos-circunferencia-abdominal').classList.remove('tracinhos');
 
-    document.getElementById('resultado-imc').classList.remove('hidden');
-    
-    // Obtém a referência da div com a classe 'tracinhos'
-    let divTracinhos = document.querySelector('.tracinhos');
-    // Adiciona o atributo hidden à div
-    divTracinhos.setAttribute('hidden', 'true');
+     // Retira o hidden da div para mostrar o valor no span
+    document.getElementById('imc').classList.remove('hidden');
+    document.getElementById('frequencia-cardiaca').classList.remove('hidden');
+    document.getElementById('consumo-calorico').classList.remove('hidden');
+    document.getElementById('circunferencia-abdominal').classList.remove('hidden');
+    document.getElementById('container-infos-resultados').classList.remove('hidden');
 
-    if (valorImc < 18.5) {
-        descricaoResultado = 'Cuidado! Você está abaixo do peso!';
-    } else if (valorImc >= 18.5 && valorImc <= 25) {
-        descricaoResultado = 'Parabéns! Você está no peso ideal!';
-    } else if (valorImc > 25 && valorImc <= 30) {
-        descricaoResultado = 'Cuidado! Você está com sobrepeso!';
-    } else if (valorImc > 30 && valorImc <= 35) {
-        descricaoResultado = 'Cuidado! Você está com obesidade moderada!';
-    } else if (valorImc > 35 && valorImc <= 40) {
-        descricaoResultado = 'Cuidade! Você está com obesidade severa!';
+    // Cálculos
+    const imc = calcularImc(peso, altura);
+    const frequenciaCardiaca = calcularFrequenciaCardiacaIdeal(idade);
+    const consumoCalorico = calcularConsumoCaloricoIdeal(sexo, peso, altura, idade);
+    const circunferenciaAbdominal = calcularCircunferenciaAbdominalIdeal(sexo, idade);
+
+    // Retira a cor padrão dos cards
+    cardImc.classList.remove('cor-padrao');
+    cardFrequenciaCardiaca.classList.remove('cor-padrao');
+    cardConsumoCalorico.classList.remove('cor-padrao');
+    cardCircunferenciaAbdominal.classList.remove('cor-padrao');
+
+    let descricaoResultadoImc = '';
+
+
+    if (imc < 18.5) {
+        cardImc.classList.add('atencao');
+        relatorioImc.classList.add('background-abaixo-peso')
+        descricaoResultadoImc = 'Cuidado! Você está abaixo do peso!';
+    } else if (imc >= 18.5 && imc <= 25) {
+        cardImc.classList.add('desejavel');
+        relatorioImc.classList.add('background-desejavel')
+        descricaoResultadoImc = 'Parabéns! Você está no peso ideal!';
+    } else if (imc > 25 && imc <= 30) {
+        cardImc.classList.add('atencao');
+        relatorioImc.classList.add('background-sobrepeso')
+        descricaoResultadoImc = 'Cuidado! Você está com sobrepeso!';
+    } else if (imc > 30 && imc <= 35) {
+        cardImc.classList.add('perigo');
+        relatorioImc.classList.add('background-obesidade-1')
+        descricaoResultadoImc = 'Cuidado! Você está com obesidade moderada!';
+    } else if (imc > 35 && imc <= 40) {
+        cardImc.classList.add('perigo');
+        relatorioImc.classList.add('background-obesidade-2')
+        descricaoResultadoImc = 'Cuidado! Você está com obesidade severa!';
     } else {
-        descricaoResultado = 'Cuidado! Você está com obesidade morbida!';
+        cardImc.classList.add('perigo');
+        relatorioImc.classList.add('background-obesidade-3')
+        descricaoResultadoImc = 'Cuidado! Você está com obesidade morbida!';
     }
+    
+    // Adiciona cor ideal aos cards
+    cardFrequenciaCardiaca.classList.add('ideal');
+    cardConsumoCalorico.classList.add('ideal');
+    cardCircunferenciaAbdominal.classList.add('ideal');
 
     // Mostra na tela
-    resultadoImc.textContent = valorImc.replace('.', ',');
-    // document.getElementById('descricao-resultado').textContent = descricaoResultado;
+    document.getElementById('resultado-imc').textContent = imc.replace('.', ',');
+    document.getElementById('descricao-resultado-imc').textContent = descricaoResultadoImc;
+    document.getElementById('resultado-frequencia-cardiaca').textContent = frequenciaCardiaca;
+    document.getElementById('resultado-consumo-calorico').textContent = consumoCalorico.replace('.', ',');
+    document.getElementById('resultado-circunferencia-abdominal').textContent = circunferenciaAbdominal;
 
     // Rola a tela para o resultado do imc
     rolarTela();
 };
 
+function calcularImc(peso, altura) {
+    return (peso / (altura * altura)).toFixed(2);
+}
+
+// Frequência Cardíaca Máxima Teórica (Fórmula de Karvonen)
+function calcularFrequenciaCardiacaIdeal(idade) {
+    return 200 - idade;
+}
+
+// Baseado na Taxa Metabólica Basal (Quantidade mínima de energia necessária para manter as funções vitais em repouso) (Fórmula de Harris-Benedict)
+function calcularConsumoCaloricoIdeal(sexo, peso, altura, idade) {
+    let taxaMetabolicaBasal;
+    if (sexo == 'MASCULINO') {
+        taxaMetabolicaBasal = 88.362 + (13.397 * peso) + (4.799 * altura * 100) - (5.677 * idade);
+    } 
+    if (sexo == 'FEMININO') {
+        taxaMetabolicaBasal = 447.593 + (9.247 * peso) + (3.098 * altura * 100) - (4.330 * idade);
+    }
+    return taxaMetabolicaBasal.toFixed(1);
+}
+
+function calcularCircunferenciaAbdominalIdeal(sexo) {
+    if (sexo == 'MASCULINO') {
+        return 102;
+    }
+    if (sexo == 'FEMININO') {
+        return 88;
+    }
+}
+
 function rolarTela() {
-    const elementoAlvo = document.getElementById('conteiner-resultados');
+    const elementoAlvo = document.getElementById('container-resultados');
     const deslocamento = elementoAlvo.getBoundingClientRect().top;
     const posicaoInicialY = window.scrollY;
     // Tempo em milissegundos para a rolagem
@@ -96,9 +166,17 @@ function validarEntrada(event) {
     }
 }
 
-function selecionarMasculino() {
+let indicadorMasculino = false;
+let indicadorFeminino = false;
+let sexo;
+
+function selecionarMasculino(event) {
+    // Impede o carregamento da página ao enviar
+    event.preventDefault();
+
     this.indicadorMasculino = true;
     this.indicadorFeminino = false;
+    sexo = 'MASCULINO';
 
     // Altera a cor do botão masculino
     const botaoMasculino = document.getElementById('botao-masculino-calculadora');
@@ -111,9 +189,13 @@ function selecionarMasculino() {
     botaoFeminino.style.color = 'black';
 }
 
-function selecionarFeminino() {
+function selecionarFeminino(event) {
+    // Impede o carregamento da página ao enviar
+    event.preventDefault();
+
     this.indicadorMasculino = false;
     this.indicadorFeminino = true;
+    sexo = 'FEMININO';
 
     // Altera a cor do botão feminino
     const botaoFeminino = document.getElementById('botao-feminino-calculadora');
