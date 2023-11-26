@@ -21,6 +21,7 @@
     --cor-cinza-claro: #d3d3d39c;
     --cor-verde: #09ca02;
     --cor-amarelo: #ebca03;
+    --cor-laranja: orange;
     --cor-vermelho-escuro: #de0000;
     --cor-azul: #0000d0;
     --cor-vermelho-claro: #ed566c;
@@ -101,6 +102,9 @@ nav {
     box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.363);
 }
 
+/*
+    Dialog login e cadastro
+*/
 #dialog-login,
 #dialog-cadastro {
     height: 375px;
@@ -206,6 +210,9 @@ main > div > h2 {
     margin: 0px;
 }
 
+/*
+    ********** Definição do IMC **********
+*/
 main > div > p {
     font-size: 1em;
     text-indent: 30px;
@@ -224,7 +231,10 @@ main > div > p {
     margin: 20px 110px;
 }
 
-#importancia-imc {
+/*
+    ********** Importância do IMC **********
+*/
+#container-importancia-imc {
     color: white;
     background-image: linear-gradient(to bottom, var(--cor-azul-escuro), var(--cor-azul-claro));
     height: 600px;
@@ -353,7 +363,7 @@ main > div > p {
     color: var(--cor-rosa-escuro);
 }
 
-#botao-calcular-calculadora {
+#botao-calcular {
     height: 46px;
     width: 345px;
     color: white;
@@ -367,7 +377,7 @@ main > div > p {
     cursor: pointer;
 }
 
-#botao-calcular-calculadora:hover {
+#botao-calcular:hover {
     color: var(--cor-azul-claro);
     background-color: var(--cor-azul-claro-fundo);
     text-decoration: none;
@@ -377,6 +387,9 @@ main > div > p {
     display: none;
 }
 
+/*
+    ********** Resultados **********
+*/
 #container-resultados {
     color: white;
     background-color: var(--cor-cinza);
@@ -427,11 +440,14 @@ main > div > p {
     margin: 0px 3px;
 }
 
-.alinhamento-esquerda {
+.alinhamento-esquerdo {
     display: flex;
     align-items: center;
 }
 
+/*
+    ********** Cards **********
+*/
 #imc span {
     font-size: 35px;
     margin: 12px 10px 0px 0px;
@@ -472,26 +488,44 @@ main > div > p {
     margin: 20px 0px 0px 0px;
 }
 
+/*
+    ********** Cores cards **********
+*/
 .cor-padrao {
     color: var(--cor-cinza-claro);
 }
 
-.ideal {
+.cor-ideal {
     color: var(--cor-azul-claro);
 }
 
-.desejavel {
+.cor-abaixo-peso {
+    color: var(--cor-verde-agua)
+}
+
+.cor-peso-desejavel {
     color: var(--cor-verde);
 }
 
-.atencao {
+.cor-sobrepeso {
     color: var(--cor-amarelo);
 }
 
-.perigo {
+.cor-obesidade-1 {
+    color: var(--cor-laranja);
+}
+
+.cor-obesidade-2 {
+    color: var(--cor-vermelho-claro);
+}
+
+.cor-obesidade-3 {
     color: var(--cor-vermelho-escuro);
 }
 
+/*
+    ********** Informações dos resultados **********
+*/
 #container-infos-resultados {
     color: white;
     background-color: var(--cor-cinza);
@@ -525,40 +559,6 @@ main > div > p {
     width: 100px;
 }
 
-#canto-esquerdo-grafico {
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-
-.background-abaixo-peso {
-    background-color: var(--cor-verde-agua);
-}
-
-.background-desejavel {
-    background-color: var(--cor-verde);
-}
-
-.background-sobrepeso {
-    background-color: var(--cor-amarelo);
-}
-
-.background-obesidade-1 {
-    background-color: orange;
-}
-
-.background-obesidade-2 {
-    background-color: var(--cor-vermelho-claro);
-}
-
-.background-obesidade-3 {
-    background-color: var(--cor-vermelho-escuro);
-}
-
-#canto-direito-grafico {
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
 #sigla-grafico {
     border-bottom: 1px solid #ddd;
 }
@@ -569,40 +569,56 @@ main > div > p {
     margin: 7px 40px;
 }
 
-.sigla-abaixo-peso {
-    color: var(--cor-verde-agua);
+#canto-esquerdo-grafico {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
-.sigla-desejavel {
-    color: var(--cor-verde);
+#canto-direito-grafico {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
-.sigla-sobrepeso {
-    color: var(--cor-amarelo);
+/*
+    ********** Cores de fundo do gráfico **********
+*/
+.background-abaixo-peso {
+    background-color: var(--cor-verde-agua);
 }
 
-.sigla-obesidade-1 {
-    color: orange;
+.background-peso-desejavel {
+    background-color: var(--cor-verde);
 }
 
-.sigla-obesidade-2 {
-    color: var(--cor-vermelho-claro);
+.background-sobrepeso {
+    background-color: var(--cor-amarelo);
 }
 
-.sigla-obesidade-3 {
-    color: var(--cor-vermelho-escuro);
+.background-obesidade-1 {
+    background-color:var(--cor-laranja);
 }
 
-#descricao-grafico-informacao-imc {
+.background-obesidade-2 {
+    background-color: var(--cor-vermelho-claro);
+}
+
+.background-obesidade-3 {
+    background-color: var(--cor-vermelho-escuro);
+}
+
+/*
+    ********** Detalhes do gráfico de IMC **********
+*/
+#detalhes-grafico-informacao-imc {
     margin-top: 25px;
 }
 
-#descricao-grafico-informacao-imc h3 {
+#detalhes-grafico-informacao-imc h3 {
     font-size: 20px;
     margin: 0px 0px 0px 80px;
 }
 
-#descricao-grafico-informacao-imc p {
+#detalhes-grafico-informacao-imc p {
     color: black;
     font-size: 17px;
     margin: 3px 3px 3px 30px;
@@ -618,6 +634,9 @@ main > div > p {
     border-radius: 10px;
 }
 
+/*
+    ********** Informações da circunferência abdominal **********
+*/
 #informacao-circunferencia-abdominal {
     color: black;
     padding: 20px;
@@ -655,6 +674,9 @@ main > div > p {
     color: var(--cor-rosa-escuro);
 }
 
+/*
+    ********** Tabela **********
+*/
 .tabela-classificacao-imc {
     width: 500px;
     /* Tira os espaços entre linhas */
@@ -676,6 +698,9 @@ main > div > p {
     padding: 10px;
 }
 
+/*
+    ********** Melhorar o resultado **********
+*/
 #dicas {
     margin: 20px 0px;
 }
@@ -710,6 +735,10 @@ main > div > p {
     margin: 10px 25px 25px 25px;
 }
 
+.rodape {
+    margin: 0px 70px;
+}
+
 footer {
     color: white;
     background-color: var(--cor-azul-escuro);
@@ -729,10 +758,6 @@ footer h2 {
 
 footer p {
     font-size: 1em;
-}
-
-.rodape {
-    margin: 0px 70px;
 }
 
 footer ul {

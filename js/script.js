@@ -11,19 +11,19 @@ function calcular(event) {
         return;
     }
     if (idade <= 0 || idade >= 110) {
-        alert('Idade inválida, verifique!');
+        alert('Idade incorreta! A idade não pode ser menor ou igual a 0 e nem maior que 110!');
         return;
     }
     if (altura <= 0 || altura > 2.50) {
-        alert('Altura inválida, verifique!');
+        alert('Altura incorreta! Verifique se a altura possui ponto no formato 1.75cm e se está no intervalo de 1 a 2.50!');
         return;
     }
     if (peso <= 0 || peso > 200) {
-        alert('Peso inválido, verifique!');
+        alert('Peso incorreto! Verifique se o peso possui ponto no formato 78.8kg e se está no intervalo de 1 a 200.0!');
         return;
     }   
 
-    // Pega os cards
+    // Pega os elementos
     const cardImc = document.getElementById('card-imc');
     const cardFrequenciaCardiaca = document.getElementById('card-frequencia-cardiaca');
     const cardConsumoCalorico = document.getElementById('card-consumo-calorico');
@@ -36,7 +36,7 @@ function calcular(event) {
     document.getElementById('tracinhos-consumo-calorico').classList.remove('tracinhos');
     document.getElementById('tracinhos-circunferencia-abdominal').classList.remove('tracinhos');
 
-     // Retira o hidden da div para mostrar o valor no span
+     // Retira o hidden da div para mostrar o valor
     document.getElementById('imc').classList.remove('hidden');
     document.getElementById('frequencia-cardiaca').classList.remove('hidden');
     document.getElementById('consumo-calorico').classList.remove('hidden');
@@ -55,39 +55,46 @@ function calcular(event) {
     cardConsumoCalorico.classList.remove('cor-padrao');
     cardCircunferenciaAbdominal.classList.remove('cor-padrao');
 
+    // Remove a classe background que tiver para inserir uma nova
+    relatorioImc.className = '';
+    
     let descricaoResultadoImc = '';
 
-
     if (imc < 18.5) {
-        cardImc.classList.add('atencao');
+        cardImc.classList.add('cor-abaixo-peso');
         relatorioImc.classList.add('background-abaixo-peso')
         descricaoResultadoImc = 'Cuidado! Você está abaixo do peso!';
+
     } else if (imc >= 18.5 && imc <= 25) {
-        cardImc.classList.add('desejavel');
-        relatorioImc.classList.add('background-desejavel')
+        cardImc.classList.add('cor-peso-desejavel');
+        relatorioImc.classList.add('background-peso-desejavel')
         descricaoResultadoImc = 'Parabéns! Você está no peso ideal!';
+
     } else if (imc > 25 && imc <= 30) {
-        cardImc.classList.add('atencao');
+        cardImc.classList.add('cor-sobrepeso');
         relatorioImc.classList.add('background-sobrepeso')
         descricaoResultadoImc = 'Cuidado! Você está com sobrepeso!';
+
     } else if (imc > 30 && imc <= 35) {
-        cardImc.classList.add('perigo');
+        cardImc.classList.add('cor-obesidade-1');
         relatorioImc.classList.add('background-obesidade-1')
         descricaoResultadoImc = 'Cuidado! Você está com obesidade moderada!';
+
     } else if (imc > 35 && imc <= 40) {
-        cardImc.classList.add('perigo');
+        cardImc.classList.add('cor-obesidade-2');
         relatorioImc.classList.add('background-obesidade-2')
         descricaoResultadoImc = 'Cuidado! Você está com obesidade severa!';
+
     } else {
-        cardImc.classList.add('perigo');
+        cardImc.classList.add('cor-obesidade-3');
         relatorioImc.classList.add('background-obesidade-3')
         descricaoResultadoImc = 'Cuidado! Você está com obesidade morbida!';
     }
     
     // Adiciona cor ideal aos cards
-    cardFrequenciaCardiaca.classList.add('ideal');
-    cardConsumoCalorico.classList.add('ideal');
-    cardCircunferenciaAbdominal.classList.add('ideal');
+    cardFrequenciaCardiaca.classList.add('cor-ideal');
+    cardConsumoCalorico.classList.add('cor-ideal');
+    cardCircunferenciaAbdominal.classList.add('cor-ideal');
 
     // Mostra na tela
     document.getElementById('resultado-imc').textContent = imc.replace('.', ',');
@@ -100,11 +107,12 @@ function calcular(event) {
     rolarTela();
 };
 
+// Baseado na fórmula de IMC
 function calcularImc(peso, altura) {
     return (peso / (altura * altura)).toFixed(2);
 }
 
-// Frequência Cardíaca Máxima Teórica (Fórmula de Karvonen)
+// Baseado na fórmula de frequência Cardíaca Máxima Teórica (Fórmula de Karvonen)
 function calcularFrequenciaCardiacaIdeal(idade) {
     return 200 - idade;
 }
@@ -121,12 +129,13 @@ function calcularConsumoCaloricoIdeal(sexo, peso, altura, idade) {
     return taxaMetabolicaBasal.toFixed(1);
 }
 
+// Baseado na medida de risco de acordo com a OMS
 function calcularCircunferenciaAbdominalIdeal(sexo) {
     if (sexo == 'MASCULINO') {
-        return 102;
+        return 93;
     }
     if (sexo == 'FEMININO') {
-        return 88;
+        return 79;
     }
 }
 
@@ -157,7 +166,7 @@ function validarEntrada(event) {
     const input = event.target;
     const valor = input.value;
 
-    // Permite somente números e vírgulas
+    // Permite somente números e ponto
     const numerosComVirgula = /^[0-9.]*$/; 
 
     // Remove o último caractere inválido
@@ -209,29 +218,27 @@ function selecionarFeminino(event) {
 }
 
 function abrirDialogLogin() {
-    const dialogLogin = document.getElementById('dialog-login');
-    dialogLogin.showModal();
+    document.getElementById('dialog-login').showModal();
 }
 
 function fecharDialogLogin() {
-    const dialogLogin = document.getElementById('dialog-login');
-    dialogLogin.close();
+    document.getElementById('dialog-login').close();
 }
 
 function abrirDialogCadastro() {
-    const dialogCadastro = document.getElementById('dialog-cadastro');
-    dialogCadastro.showModal();
+    document.getElementById('dialog-cadastro').showModal();
 }
 
 function fecharDialogCadastro() {
-    const dialogCadastro = document.getElementById('dialog-cadastro');
-    dialogCadastro.close();
+    document.getElementById('dialog-cadastro').close();
 }
 
+// Implementar para buscar no banco de dados
 function entrar() {
 
 }
 
+// Implementar para cadastrar no banco de dados
 function cadastrar() {
 
 }

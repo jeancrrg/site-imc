@@ -20,37 +20,45 @@
 </head>
 <body>
     <header>
-        <img src="images/logo-site.png" alt="ícone">
+        <div>
+            <img src="images/logo-site.png" alt="ícone">
+        </div>
 
         <div id="titulo">
             <h1> CALCULADORA DE IMC </h1>
             <h3> Índice de Massa Corporal </h3>
         </div>
 
-        <button class="botao" onclick="abrirDialogLogin()"> 
-            <span>
-                <i class="fa-solid fa-right-to-bracket"></i>
-                Entrar 
-            </span>
-        </button>
-        <button class="botao" onclick="abrirDialogCadastro()"> 
-            <span>
-                <i class="fa-solid fa-user-plus"></i>
-                Cadastrar 
-            </span>
-        </button>
+        <div>
+            <button class="botao" onclick="abrirDialogLogin()">
+                <span>
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    Entrar
+                </span>
+            </button>
+        </div>
+        <div>
+            <button class="botao" onclick="abrirDialogCadastro()">
+                <span>
+                    <i class="fa-solid fa-user-plus"></i>
+                    Cadastrar
+                </span>
+            </button>
+        </div>
     </header>
 
     <nav>
-        <a href="ajuda.html" class="botao"> 
-            <span>
-                Ajuda
-                <i class="fa-solid fa-circle-info"></i>
-            </span>
-        </a>
+        <div>
+            <a href="ajuda.html" class="botao">
+                <span>
+                    Ajuda
+                    <i class="fa-solid fa-circle-info"></i>
+                </span>
+            </a>
+        </div>
     </nav>
 
-    <!-- DIALOG LOGIN -->
+    <!-- Dialog Login -->
     <dialog id="dialog-login">
         <form id="form-login" autocomplete="off">
             <div class="alinhamento-dialog">
@@ -87,7 +95,7 @@
         </form>
     </dialog>
 
-    <!-- DIALOG CADASTRO -->
+    <!-- Dialog Cadastro -->
     <dialog id="dialog-cadastro">
         <form id="form-cadastro" autocomplete="off">
             <div class="alinhamento-dialog">
@@ -123,10 +131,10 @@
             </div>
         </form>
     </dialog>
-
     
     <main>
-        <div>
+        <!-- Definição do IMC -->
+        <div id="container-definicao-imc">
             <h2> O que é IMC? </h2>
             
             <p>
@@ -141,33 +149,29 @@
             <img id="imagem-calculo-imc" src="images/calculo-imc.png" alt="cálculo IMC">
         </div>
 
-        <div id="importancia-imc">
+        <!-- Importância do IMC -->
+        <div id="container-importancia-imc">
             <div id="texto-importancia-imc">
-                <div>
-                    <h2> Importância do IMC </h2>
-                </div>
+                <h2> Importância do IMC </h2>
         
-                <div>
-                    <p>
-                        A classificação do IMC é uma ferramenta valiosa para identificar problemas de obesidade ou desnutrição em indivíduos de todas as faixas etárias, desde crianças e adolescentes até adultos e idosos.
-                    </p>
-                    <p>
-                        Além de calcular o valor, essa calculadora também fornece orientações sobre o intervalo de peso ideal para manter uma qualidade de vida saudável.
-                    </p>
-                    <p>
-                        Manter o peso dentro desse intervalo é crucial para prevenir o desenvolvimento de várias doenças crônicas como diabetes, hipertensão e problemas cardíacos.
-                    </p>
-                </div>
+                <p>
+                    A classificação do IMC é uma ferramenta valiosa para identificar problemas de obesidade ou desnutrição em indivíduos de todas as faixas etárias, desde crianças e adolescentes até adultos e idosos.
+                </p>
+                <p>
+                    Além de calcular o valor, essa calculadora também fornece orientações sobre o intervalo de peso ideal para manter uma qualidade de vida saudável.
+                </p>
+                <p>
+                    Manter o peso dentro desse intervalo é crucial para prevenir o desenvolvimento de várias doenças crônicas como diabetes, hipertensão e problemas cardíacos.
+                </p>
                 <div id="descubra-seu-imc">
                     <p>
-                        <strong>Descubra seu IMC e garanta uma melhor qualidade de vida!</strong>
+                        <strong> Descubra seu IMC e garanta uma melhor qualidade de vida! </strong>
                     </p>
                 </div>
             </div>
 
             <div id="calculadora-imc">
                 <form id="form-calculadora" autocomplete="off">
-                    
                     <div>
                         <label for="sexo" class="label-calculadora"> Sexo: </label>
                         <div class="alinhamento-centro">
@@ -199,7 +203,7 @@
                             <i class="fa-solid fa-ruler"></i>
                             <input id="altura" type="text" class="input-calculadora" placeholder="Ex: 1.75" required maxlength="4"
                             oninput="validarEntrada(event)">
-                            <span> m </span>
+                            <span> cm </span>
                         </div>
                     </div>
 
@@ -213,24 +217,26 @@
                         </div>
                     </div>
 
-                    <button id="botao-calcular-calculadora" onclick="calcular(event)"> CALCULAR </button>
+                    <button id="botao-calcular" onclick="calcular(event)"> CALCULAR </button>
                 </form>
             </div>
         </div>
 
+        <!-- Resultados -->
         <div id="container-resultados">
             <h2> Resultado </h2>
             <p> Seu resultado aparecerá logo abaixo: </p>
 
             <div id="cards-resultados">
+                <!-- Card IMC-->
                 <div id="card-imc" class="cor-padrao">
                     <div class="alinhamento-centro">
                         <i class="fa-solid fa-notes-medical"></i>
                         <div>
                             <div id="imc" class="hidden">
-                                <div class="alinhamento-esquerda">
+                                <div class="alinhamento-esquerdo">
                                     <span id="resultado-imc"></span>
-                                    <p>kg</p>
+                                    <p> kg </p>
                                 </div>
                             </div>
 
@@ -243,14 +249,15 @@
                     </div>
                 </div>
 
+                <!-- Card frequência cardíaca -->
                 <div id="card-frequencia-cardiaca" class="cor-padrao">
                     <div class="alinhamento-centro">
                         <i class="fa-solid fa-heart-pulse"></i>
                         <div>
                             <div id="frequencia-cardiaca" class="hidden">
-                                <div class="alinhamento-esquerda">
+                                <div class="alinhamento-esquerdo">
                                     <span id="resultado-frequencia-cardiaca"></span>
-                                    <p>bpm</p>
+                                    <p> bpm </p>
                                 </div>
                             </div>
     
@@ -263,14 +270,15 @@
                     </div>
                 </div>
 
+                <!-- Card consumo calórico -->
                 <div id="card-consumo-calorico" class="cor-padrao">
                     <div class="alinhamento-centro">
                         <i class="fa-solid fa-utensils"></i>
                         <div>
                             <div id="consumo-calorico" class="hidden">
-                                <div class="alinhamento-esquerda">
+                                <div class="alinhamento-esquerdo">
                                     <span id="resultado-consumo-calorico"></span>
-                                    <p>kcal</p>
+                                    <p> kcal </p>
                                 </div>
                             </div>
 
@@ -283,14 +291,15 @@
                     </div>
                 </div>
 
+                <!-- Card circunferência abdominal -->
                 <div id="card-circunferencia-abdominal" class="cor-padrao">
                     <div class="alinhamento-centro">
                         <i class="fa-solid fa-tape"></i>
                         <div>   
                             <div id="circunferencia-abdominal" class="hidden">
-                                <div class="alinhamento-esquerda">
+                                <div class="alinhamento-esquerdo">
                                     <span id="resultado-circunferencia-abdominal"></span>
-                                    <p>cm</p>
+                                    <p> cm </p>
                                 </div>
                             </div>
                             
@@ -305,18 +314,18 @@
             </div>
         </div>
 
+        <!-- Informações dos resultado -->
         <div id="container-infos-resultados" class="hidden">
-
             <div class="alinhamento-centro">
                 <div id="informacao-imc">
-
+                    <!-- Gráfico IMC -->
                     <div>
                         <div id="grafico-informacao-imc" class="alinhamento-centro">
                             <div id="canto-esquerdo-grafico" class="background-abaixo-peso">
                                 <span></span>
                             </div>
             
-                            <div class="background-desejavel">
+                            <div class="background-peso-desejavel">
                                 <span></span>
                             </div>
             
@@ -338,33 +347,32 @@
                         </div>
 
                         <div id="sigla-grafico" class="alinhamento-centro">
-                            <div class="sigla-abaixo-peso">
+                            <div class="cor-abaixo-peso">
                                 <p>A1</p>
                             </div>
-                            <div class="sigla-desejavel">
+                            <div class="cor-peso-desejavel">
                                 <p>D1</p>
                             </div>
-                            <div class="sigla-sobrepeso">
+                            <div class="cor-sobrepeso">
                                 <p>S1</p>
                             </div>
-                            <div class="sigla-obesidade-1">
+                            <div class="cor-obesidade-1">
                                 <p>O1</p>
                             </div>
-                            <div class="sigla-obesidade-2">
+                            <div class="cor-obesidade-2">
                                 <p>O2</p>
                             </div>
-                            <div class="sigla-obesidade-3">
+                            <div class="cor-obesidade-3">
                                 <p>O3</p>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Detalhes do Gráfico de IMC -->
                     <div id="descricao-informacao-imc" class="alinhamento-dialog">
-
-                        <div id="descricao-grafico-informacao-imc">
-
-                            <div class="alinhamento-esquerda">
-                                <div class="sigla-abaixo-peso">
+                        <div id="detalhes-grafico-informacao-imc">
+                            <div class="alinhamento-esquerdo">
+                                <div class="cor-abaixo-peso">
                                     <h3>A1 |</h3>
                                 </div>
                                 <div>
@@ -372,8 +380,8 @@
                                 </div>
                             </div>
 
-                            <div class="alinhamento-esquerda">
-                                <div class="sigla-desejavel">
+                            <div class="alinhamento-esquerdo">
+                                <div class="cor-peso-desejavel">
                                     <h3>D1 |</h3>
                                 </div>
                                 <div>
@@ -381,8 +389,8 @@
                                 </div>
                             </div>
 
-                            <div class="alinhamento-esquerda">
-                                <div class="sigla-sobrepeso">
+                            <div class="alinhamento-esquerdo">
+                                <div class="cor-sobrepeso">
                                     <h3>S1 |</h3>
                                 </div>
                                 <div>
@@ -390,8 +398,8 @@
                                 </div>
                             </div>
                             
-                            <div class="alinhamento-esquerda">
-                                <div class="sigla-obesidade-1">
+                            <div class="alinhamento-esquerdo">
+                                <div class="cor-obesidade-1">
                                     <h3>O1 |</h3>
                                 </div>
                                 <div>
@@ -399,8 +407,8 @@
                                 </div>
                             </div>
 
-                            <div class="alinhamento-esquerda">
-                                <div class="sigla-obesidade-2">
+                            <div class="alinhamento-esquerdo">
+                                <div class="cor-obesidade-2">
                                     <h3>O2 |</h3>
                                 </div>
                                 <div>
@@ -408,25 +416,23 @@
                                 </div>
                             </div>
                             
-                            <div class="alinhamento-esquerda">
-                                <div class="sigla-obesidade-3">
+                            <div class="alinhamento-esquerdo">
+                                <div class="cor-obesidade-3">
                                     <h3>O3 |</h3>
                                 </div>
                                 <div>
                                     <p>Obesidade 3</p>
                                 </div>
                             </div>
-
                         </div>
                         
                         <div id="relatorio-imc">
                             <span id="descricao-resultado-imc"></span>
                         </div>
                     </div>
-
                 </div>
 
-
+                <!-- Informações da circunferência abdominal -->
                 <div id="informacao-circunferencia-abdominal">
                     <div>
                         <p>
@@ -438,12 +444,9 @@
                     </div>  
 
                     <div id="medida-risco-circunferencia">
-                        <div>
-                            <p> Medidas de risco da circunferência abdominal: </p>
-                        </div>
+                        <p> Medidas de risco da circunferência abdominal: </p>
 
-
-                        <div id="medidas-risco" class="alinhamento-esquerda">
+                        <div id="medidas-risco" class="alinhamento-esquerdo">
                             <div id="homens" class="alinhamento-centro">
                                 <div>
                                     <i class="fa-solid fa-mars"></i>
@@ -466,14 +469,13 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
             </div>
         </div>
 
-        <div>
+        <!-- Entenda seu resultado -->
+        <div id="container-entenda-seu-resultado">
             <h2> Entenda seu resultado </h2>
 
             <p>
@@ -481,57 +483,61 @@
             </p>
 
             <p>
-                Para uma avaliação mais abrangente, além do IMC, é fundamental considerar as <strong>medidas de risco da circunferência abdominal</strong>. Homens com uma circunferência acima de <strong>94cm</strong> e mulheres com mais de <strong>80cm</strong> podem apresentar um risco elevado à saúde. Essa medida adicional pode fornecer informações valiosas sobre a distribuição de gordura corporal.
+                Para uma avaliação mais abrangente, além do IMC, é fundamental considerar as <strong>medidas de risco da circunferência abdominal</strong>. Homens com uma circunferência acima de <strong>93cm</strong> e mulheres com mais de <strong>79cm</strong> podem apresentar um risco elevado à saúde. Essa medida adicional pode fornecer informações valiosas sobre a distribuição de gordura corporal.
             </p>
         </div>
 
-        <div class="alinhamento-centro">
-            <!-- Hierarquia de tabelas (simples)
-                TABLE = tabela
-                    TABLE ROW = linha da tabela (tr)
-                        TABLE HEADER = cabeçalho da tabela
-                        TABLE DATA = dado da tabela (td) -->
-            <table class="tabela-classificacao-imc">
-                <tr class="cabecalho-tabela">
-                    <td> IMC </td>
-                    <td> Classificação </td>
-                </tr>
-                
-                <tr class="linha-azul">
-                    <td> Menor que 18,5 </td>
-                    <td> Abaixo do peso </td>
-                </tr>
+        <!-- Tabela -->
+        <div id="container-tabela">
+            <div class="alinhamento-centro">
+                <!-- Hierarquia de tabelas (simples)
+                    TABLE = tabela
+                        TABLE ROW = linha da tabela (tr)
+                            TABLE HEADER = cabeçalho da tabela
+                            TABLE DATA = dado da tabela (td) -->
+                <table class="tabela-classificacao-imc">
+                    <tr class="cabecalho-tabela">
+                        <td> IMC </td>
+                        <td> Classificação </td>
+                    </tr>
+                    
+                    <tr class="linha-azul">
+                        <td> Menor que 18,5 </td>
+                        <td> Abaixo do peso </td>
+                    </tr>
 
-                <tr>
-                    <td> 18,5 a 24,9 </td>
-                    <td> Normal </td>
-                </tr>
-                
-                <tr class="linha-azul"> 
-                    <td> 25 a 29,9 </td>
-                    <td> Sobrepeso </td>
-                </tr>
+                    <tr>
+                        <td> 18,5 a 24,9 </td>
+                        <td> Normal </td>
+                    </tr>
+                    
+                    <tr class="linha-azul"> 
+                        <td> 25 a 29,9 </td>
+                        <td> Sobrepeso </td>
+                    </tr>
 
-                <tr>
-                    <td> 30 a 39,9 </td>
-                    <td> Obesidade Grau 1 </td>
-                </tr>
-                
-                <tr class="linha-azul">
-                    <td> 35 a 39,9 </td>
-                    <td> Obesidade Grau 2 </td>
-                </tr>
+                    <tr>
+                        <td> 30 a 39,9 </td>
+                        <td> Obesidade Grau 1 </td>
+                    </tr>
+                    
+                    <tr class="linha-azul">
+                        <td> 35 a 39,9 </td>
+                        <td> Obesidade Grau 2 </td>
+                    </tr>
 
-                <tr>
-                    <td> Acima de 40 </td>
-                    <td> Obesidade Grau 3 </td>
-                </tr>
-            </table>
+                    <tr>
+                        <td> Acima de 40 </td>
+                        <td> Obesidade Grau 3 </td>
+                    </tr>
+                </table>
 
-            <img id="imagem-medicina" src="images/medicina.png" alt="Imagem medicina">
+                <img id="imagem-medicina" src="images/medicina.png" alt="Imagem medicina">
+            </div>
         </div>
 
-        <div>
+        <!-- Melhorar o IMC -->
+        <div id="container-melhorar-imc">
             <h2> O que fazer para melhorar o IMC? </h2>
 
             <p>
@@ -543,7 +549,8 @@
             </p>
         </div>
 
-        <div>
+        <!-- Melhorar o resultado -->
+        <div id="container-melhorar-resultado">
             <h2> 5 Dicas para controlar seu resultado</h2>
 
             <p>
@@ -561,6 +568,7 @@
                             O exercício é fundamental para manter uma vida saudável. O Centro de Controle e Prevenção de Doenças (CDC) recomenda pelo menos 150 minutos de atividade física moderada ou 75 minutos de atividade intensa por semana para adultos saudáveis.
                         </p>
                     </div>
+
                     <div class="cards-dicas">
                         <div class="alinhamento-centro">
                             <i class="fa-solid fa-chart-line"></i>
@@ -570,6 +578,7 @@
                             É importante monitorar seu IMC regularmente para garantir que ele permaneça dentro de uma faixa saudável. Use a calculadora acima para calcular seu IMC e verifique-o a cada poucos meses para garantir que você esteja no caminho certo.
                         </p>  
                     </div>
+
                     <div class="cards-dicas">
                         <div class="alinhamento-centro">
                             <i class="fa-solid fa-apple-whole"></i>
@@ -591,6 +600,7 @@
                             A falta de sono pode afetar negativamente a capacidade do corpo de regular o açúcar no sangue e o apetite, o que pode levar a um aumento do IMC. Adultos devem tentar dormir pelo menos 7 horas por noite para manter um IMC saudável.
                         </p>
                     </div>
+
                     <div class="cards-dicas">
                         <div class="alinhamento-centro">
                             <i class="fa-solid fa-dove"></i>
@@ -606,7 +616,6 @@
             <p>
                 Ao seguir essas dicas práticas, você pode <strong>controlar seu IMC e manter uma boa saúde.</strong> Lembre-se de que manter um IMC saudável é um esforço contínuo e requer comprometimento e disciplina, mas os benefícios para a saúde valem a pena.
             </p>
-            
         </div>
     </main>
 
@@ -618,7 +627,7 @@
         <div class="rodape">
             <h2> SOBRE NÓS </h2>
             <p>
-                Site criado e desenvolvido pela equipe de alunos da Uniessa, a fim de realizar o trabalho do DAS.
+                Site criado e desenvolvido pelo grupo de alunos da Uniessa, a fim de realizar o trabalho do DAS.
             </p>
         </div>
         
