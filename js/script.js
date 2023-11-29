@@ -114,7 +114,7 @@ function calcularImc(peso, altura) {
 
 // Baseado na fórmula de frequência Cardíaca Máxima Teórica (Fórmula de Karvonen)
 function calcularFrequenciaCardiacaIdeal(idade) {
-    return 200 - idade;
+    return 220 - idade;
 }
 
 // Baseado na Taxa Metabólica Basal (Quantidade mínima de energia necessária para manter as funções vitais em repouso) (Fórmula de Harris-Benedict)
